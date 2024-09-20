@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFI Survey System</title>
+    <link rel="stylesheet" href="./../stylesheet/stylesheet.css">
+</head>
+<body>
+    <!-- Hidden field for kernal_ID -->
+    <input type="text" id="kernal_ID" name="kernal_ID" hidden>
+
+    <div class="form-section">
+        <div class="container">
+            <div class="extra-div">
+                <!-- Replace "YOUR_WEB_APP_URL" with your actual deployment URL -->
+                <form class="main-form" method="post" action="https://script.google.com/macros/s/AKfycbxw1DtVkpBviY8io1DxII1pWb4LhJd5U64NToFg6rH3YdZYFolEjg1mcRMS5jyxY5rbTA/exec"> 
+                    <div class="question-area">
+                        <h2 class="question-title">How was Your visit?</h2>
+                        <div class="answers-area">
+                            <div class="radio-field">
+                                <input type="radio" name="rate" id="visitRate1" value="1">
+                                <label for="visitRate1">1</label>
+                            </div>
+                            <div class="radio-field">
+                                <input type="radio" name="rate" id="visitRate2" value="2">
+                                <label for="visitRate2">2</label>
+                            </div>
+                            <div class="radio-field">
+                                <input type="radio" name="rate" id="visitRate3" value="3">
+                                <label for="visitRate3">3</label>
+                            </div>
+                            <div class="radio-field">
+                                <input type="radio" name="rate" id="visitRate4" value="4">
+                                <label for="visitRate4">4</label>
+                            </div>
+                            <div class="radio-field">
+                                <input type="radio" name="rate" id="visitRate5" value="5">
+                                <label for="visitRate5">5</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Submit button -->
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to assign the kernel ID -->
+    <script>
+        function assignKernalId() {
+            // Set the kernal_ID value to a unique ID or predefined value
+            document.getElementById("kernal_ID").value = "judy_faddah";  // You can replace this with a dynamically generated ID
+        }
+
+        window.addEventListener('load', assignKernalId);
+    </script>
+</body>
+</html>
