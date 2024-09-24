@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: "Cairo", sans-serif;
@@ -161,12 +165,12 @@ body {
 footer {
     width: 100%;
     position: fixed;
-    top: calc(100% - 50px);
+    top: calc(100% - 30px);
     left: 50%;
     transform: translateX(-50%);
-    /* background-color: white;
-    height: 50px;
-    box-shadow: 1px 1px 20px 7px #ffffff; */
+    background-color: white;
+    height: 100px;
+    box-shadow: 1px 1px 51px 10px white;
 }
 
 .footer-container {
@@ -366,6 +370,7 @@ a.copyrighted-slogan {
 
 iframe {
     width: 100%;
+    margin: 10px 0px;
 }
 
 /* first scene */
