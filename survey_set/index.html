@@ -1,61 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAFI Survey System</title>
     <link rel="stylesheet" href="./../stylesheet/stylesheet.css">
 </head>
+
+<style>
+    ::-webkit-scrollbar {
+        width: 0em !important;
+    }
+</style>
+
 <body>
     <!-- Hidden field for kernal_ID -->
-    <input type="text" id="kernal_ID" name="kernal_ID" hidden>
 
     <div class="form-section">
-        <div class="container">
+        <div class="container form-container">
             <div class="extra-div">
                 <!-- Replace "YOUR_WEB_APP_URL" with your actual deployment URL -->
-                <form class="main-form" method="post" action="https://script.google.com/macros/s/AKfycbxw1DtVkpBviY8io1DxII1pWb4LhJd5U64NToFg6rH3YdZYFolEjg1mcRMS5jyxY5rbTA/exec"> 
+                <form id="surveyForm" class="main-form" method="post"
+                    action="https://script.google.com/macros/s/AKfycbylJQToqFAQvW4SJcB1IZSgB_3hxfIjPKdp5m7jlPSb6KiTdRWi3DdHJzWG1dBlnok3Pw/exec"
+                    onsubmit="return validateAndSubmit()">
+                    <input type="text" id="kernal_ID" name="kernal_ID" hidden value="">
                     <div class="question-area">
                         <h2 class="question-title">How was Your visit?</h2>
+                        <p class="question-description">lorem ibusm hello welcome to our website</p>
                         <div class="answers-area">
                             <div class="radio-field">
                                 <input type="radio" name="rate" id="visitRate1" value="1">
-                                <label for="visitRate1">1</label>
                             </div>
                             <div class="radio-field">
                                 <input type="radio" name="rate" id="visitRate2" value="2">
-                                <label for="visitRate2">2</label>
                             </div>
                             <div class="radio-field">
                                 <input type="radio" name="rate" id="visitRate3" value="3">
-                                <label for="visitRate3">3</label>
                             </div>
                             <div class="radio-field">
                                 <input type="radio" name="rate" id="visitRate4" value="4">
-                                <label for="visitRate4">4</label>
                             </div>
                             <div class="radio-field">
                                 <input type="radio" name="rate" id="visitRate5" value="5">
-                                <label for="visitRate5">5</label>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Submit button -->
-                    <input type="submit" value="Submit">
-                </form>
+
+                    <div class="question-area">
+                        <h2 class="question-title">What did you visit ?</h2>
+                        <p class="question-description">lorem ibusm hello welcome to our website</p>
+                        <div class="answers-area options-answers-area">
+                            <div class="radio-field">
+                                <input class="select-options" type="radio" name="visited_gov" id="Alexandria"
+                                    value="Alexandria">
+                            </div>
+                            <div class="radio-field">
+                                <input class="select-options" type="radio" name="visited_gov1" id="Cairo" value="Cairo">
+                            </div>
+                            <div class="radio-field">
+                                <input class="select-options" type="radio" name="visited_gov2" id="MersaMatruh"
+                                    value="Mersa Matruh">
+                            </div>
+                            <div class="radio-field">
+                                <input class="select-options" type="radio" name="visited_gov3" id="PortSaid"
+                                    value="Port Said">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-area">
+                        <h2 class="question-title">How was Your visit?</h2>
+                        <p class="question-description">lorem ibusm hello welcome to our website</p>
+                        <select class="droplist-input" name="govs" id="visitedOne">
+                            <option id="alexChoose" value="Alexandria">Alexandria</option>
+                            <option id="cairoChoose" value="Cairo">Cairo</option>
+                            <option id="matruhChoose" value="Mersa Matruh">Mersa Matruh</option>
+                        </select>
+                    </div>
+
+                    <div class="question-area">
+                        <h2 class="question-title">How was Your visit?</h2>
+                        <p class="question-description">lorem ibusm hello welcome to our website</p>
+                        <input type="date" name="date" id="dataDpart">
+                    </div>
             </div>
+
         </div>
+        <!-- Submit button -->
+        <input id="submitBtn" class="submit-button" type="submit" value="Submit">
+        </form>
     </div>
 
-    <!-- JavaScript to assign the kernel ID -->
     <script>
         function assignKernalId() {
-            // Set the kernal_ID value to a unique ID or predefined value
-            document.getElementById("kernal_ID").value = "judy_faddah";  // You can replace this with a dynamically generated ID
+            const kernalId = Math.random()*10000;
+            document.getElementById("kernal_ID").value = kernalId;
         }
 
+        function validateAndSubmit() {
+            const kernalInput = document.getElementById("kernal_ID").value;
+            if (!kernalInput) {
+                assignKernalId();
+            }
+            return true;
+        }
         window.addEventListener('load', assignKernalId);
     </script>
+
 </body>
+
 </html>

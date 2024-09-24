@@ -69,10 +69,11 @@
                         <h3>@juju_</h3>
                     </div>
                 </div>
+                <iframe src="./../../../survey_set/index.html" frameborder="0" style="height: 100vh;"></iframe>
             </div>
         </div>
 
-    <footer>
+    <!-- <footer>
         <div class="container footer-container">
             <div class="footer-options">
                 <a href="https://safi-eg.netlify.app/about">About</a>
@@ -81,7 +82,7 @@
                 <a href="" class="copyrighted-slogan">&copy; 2024 SAFI Group</a>
             </div>
         </div>
-    </footer>
+    </footer> -->
 
     </div>
     <script src="../../../js/jquery.min.js"></script>
@@ -90,7 +91,6 @@
 
     <script>
         const ratingCards = document.querySelectorAll('.rating-card');
-
         ratingCards.forEach(card => {
             card.addEventListener('click', () => {
                 ratingCards.forEach(card => card.classList.remove('active'));
@@ -99,15 +99,5 @@
         });
     </script>
 
-    <script>
-        var a = document.getElementById("exc");
-        var b = document.getElementById("excInput");
-
-        a.addEventListener("click", function () {
-            b.value = '70%'
-            console.log(b.value);
-        })
-    </script>
-</body>
 
 </html>
