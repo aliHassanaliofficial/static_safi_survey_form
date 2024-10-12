@@ -12,6 +12,11 @@
     ::-webkit-scrollbar {
         width: 0em !important;
     }
+
+    .required-flag {
+        color: red;
+        font-weight: bolder;
+    }
 </style>
 
 <body>
@@ -25,88 +30,87 @@
                     action="https://script.google.com/macros/s/AKfycbylJQToqFAQvW4SJcB1IZSgB_3hxfIjPKdp5m7jlPSb6KiTdRWi3DdHJzWG1dBlnok3Pw/exec"
                     onsubmit="return validateAndSubmit()">
                     <input type="text" id="kernal_ID" name="kernal_ID" hidden value="">
-                    <div class="question-area">
-                        <h2 class="question-title">How was Your visit?</h2>
-                        <p class="question-description">lorem ibusm hello welcome to our website</p>
-                        <div class="answers-area">
-                            <div class="radio-field">
-                                <input required type="radio" name="rate" id="visitRate1" value="1">
-                            </div>
-                            <div class="radio-field">
-                                <input required type="radio" name="rate" id="visitRate2" value="2">
-                            </div>
-                            <div class="radio-field">
-                                <input required type="radio" name="rate" id="visitRate3" value="3">
-                            </div>
-                            <div class="radio-field">
-                                <input required type="radio" name="rate" id="visitRate4" value="4">
-                            </div>
-                            <div class="radio-field">
-                                <input required type="radio" name="rate" id="visitRate5" value="5">
-                            </div>
-                        </div>
-                    </div>
+
 
                     <div class="question-area">
-                        <h2 class="question-title">What did you visit ?</h2>
-                        <p class="question-description">lorem ibusm hello welcome to our website</p>
+                        <h2 class="question-title">
+                            1. What was the purpose of your trip to Egypt ?
+                        </h2>
+                        <p class="question-description"></p>
+                        <p class="question-description">
+                            This question is for survey prupose,
+                            You can choose more than one option from the avaliable options
+                        </p>
                         <div class="answers-area options-answers-area">
                             <div class="radio-field">
-                                <input class="select-options" type="radio" name="visited_gov" id="Alexandria"
-                                    value="Alexandria">
+                                <input class="select-options" type="radio" name="visitType" value="leisure">
                             </div>
                             <div class="radio-field">
-                                <input class="select-options" type="radio" name="visited_gov1" id="Cairo" value="Cairo">
+                                <input class="select-options" type="radio" name="visitType" value="adventure">
                             </div>
                             <div class="radio-field">
-                                <input class="select-options" type="radio" name="visited_gov2" id="MersaMatruh"
-                                    value="Mersa Matruh">
+                                <input class="select-options" type="radio" name="visitType" value="business">
                             </div>
                             <div class="radio-field">
-                                <input class="select-options" type="radio" name="visited_gov3" id="PortSaid"
-                                    value="Port Said">
+                                <input class="select-options" type="radio" name="visitType" value="religious">
+                            </div>
+                            <div class="radio-field">
+                                <input class="select-options" type="radio" name="visitType" value="medical">
                             </div>
                         </div>
                     </div>
 
                     <div class="question-area">
-                        <h2 class="question-title">How was Your visit?</h2>
-                        <p class="question-description">lorem ibusm hello welcome to our website</p>
-                        <select class="droplist-input" name="govs" id="visitedOne">
-                            <option id="alexChoose" value="Alexandria">Alexandria</option>
-                            <option id="cairoChoose" value="Cairo">Cairo</option>
-                            <option id="matruhChoose" value="Mersa Matruh">Mersa Matruh</option>
-                        </select>
+                        <h2 class="question-title">
+                            2. Was it group or independent travel ?
+                        </h2>
+                        <p class="question-description"></p>
+                        <p class="question-description">
+                            This question is for survey prupose only.
+                        </p>
+                        <div class="answers-area options-answers-area bulks-answers">
+                            <div class="radio-field">
+                                <input id="travelCompanion1" type="radio" name="travelCompanion" class="radio-label">
+                                <label for="travelCompanion1" class="radio-name">independent</label>
+                            </div>
+                            <div class="radio-field">
+                                <input id="travelCompanion2" type="radio" name="travelCompanion" class="radio-label">
+                                <label for="travelCompanion2" class="radio-name">group (family)</label>
+                            </div>
+                            <div class="radio-field">
+                                <input id="travelCompanion3" type="radio" name="travelCompanion" class="radio-label">
+                                <label for="travelCompanion3" class="radio-name">group (tourism company / application)</label>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="question-area">
-                        <h2 class="question-title">How was Your visit?</h2>
-                        <p class="question-description">lorem ibusm hello welcome to our website</p>
-                        <input type="date" name="date" id="dataDpart">
-                    </div>
+
+
+
+
+
+
             </div>
-
+            <!-- Submit button -->
+            <input id="submitBtn" class="submit-button" type="submit" value="Submit">
+            </form>
         </div>
-        <!-- Submit button -->
-        <input id="submitBtn" class="submit-button" type="submit" value="Submit">
-        </form>
-    </div>
 
-    <script>
-        function assignKernalId() {
-            const kernalId = Math.random()*10000;
-            document.getElementById("kernal_ID").value = kernalId;
-        }
-
-        function validateAndSubmit() {
-            const kernalInput = document.getElementById("kernal_ID").value;
-            if (!kernalInput) {
-                assignKernalId();
+        <script>
+            function assignKernalId() {
+                const kernalId = Math.random() * 10000;
+                document.getElementById("kernal_ID").value = kernalId;
             }
-            return true;
-        }
-        window.addEventListener('load', assignKernalId);
-    </script>
+
+            function validateAndSubmit() {
+                const kernalInput = document.getElementById("kernal_ID").value;
+                if (!kernalInput) {
+                    assignKernalId();
+                }
+                return true;
+            }
+            window.addEventListener('load', assignKernalId);
+        </script>
 
 </body>
 
