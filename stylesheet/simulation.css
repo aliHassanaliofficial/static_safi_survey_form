@@ -1,0 +1,133 @@
+.welcoming-simulation {
+    overflow: hidden !important;
+}
+
+.simulation-background {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+.simulation-background video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.blending-layer {
+    width: 100%;
+    height: 100vh;
+    transition: all 500ms ease-in-out;
+    animation: darkenBackground 3s both;
+    position: absolute;
+}
+
+@keyframes darkenBackground {
+    0% {
+        background-color: black;
+        opacity: 0%;
+    }
+    100% {
+        background-color: black;
+        opacity: 55%;
+    }
+}
+
+.simulation-layer {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+.communicate-box {
+    border: 6px solid white;
+    width: 90%;
+    height: 90vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 35px;
+    box-shadow: 0em 0em 1em 15px #ffffff26, inset 0em 0em 1em 0px #ffffff1f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.simulation-layer .welcome-text-area {
+    width: 90%;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.simulation-layer .welcome-text-area h1 {
+    animation: anim1Text 1s ease 0s 1 normal forwards;
+    font-size: 2em;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#onloadText {
+    animation-name: timedPushUp;
+    animation-delay: 3s;
+    animation-duration: .5s;
+    animation-direction: reverse;  
+    animation-fill-mode: forwards;
+    text-align: center;
+}
+
+@keyframes timedPushUp {
+    0%   {left:50%; top:20%;}
+}
+
+
+@keyframes anim1Text {
+	0% {
+		opacity: 0;
+		transform: scale(0.6);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 1px 1px 51px 10px rgba(255, 255, 255, 0);
+}
+
+@media (min-width: 768px) {
+    .simulation-layer .welcome-text-area h1 {
+        font-size: 4em;
+    }
+}
+
+@media (min-width: 1023px) and (max-width: 1025px) {
+
+}
+
+@media (min-width: 1200px) {
+    .simulation-layer .welcome-text-area h1 {
+        font-size: 5em;
+    }
+    .communicate-box{        
+        border: 2px solid white;
+        border-radius: 60px;
+        border-bottom: medium;
+        border-right: medium;
+        border-radius: 60px;
+        box-shadow: 0em 0em 1em 15px #ffffff1c, inset 0em 0em 12em 0px #00000047;
+        backdrop-filter: blur(4px);
+    }
+}

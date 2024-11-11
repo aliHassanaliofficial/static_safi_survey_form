@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFI Group</title>
+    <link rel="icon" href="../../../assets/static/framedLogo.png">
+    <link rel="stylesheet" href="../../../stylesheet/stylesheet.css">
+    <link rel="stylesheet" href="../../../stylesheet/loader.css">
+    <link rel="stylesheet" href="../../../stylesheet/mediaquery.css">
+    <link rel="stylesheet" href="../../../stylesheet/simulation.css">
+    <!-- fontsMerged_CAIRO -t -googlefonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="pending">
+            <div class="loading">
+                <img src="../../../assets/static/framedLogo.png" alt="" />
+                <div id="loaderLine" class="loader-line"></div>
+                <h5 style="margin: 2px 0px">
+                    Powered By:
+                    <strong style="font-size: 17px">ERA Engines &copy; 2024</strong>
+                </h5>
+                <h5 style="margin: 2px 0px"></h5>
+                <h5 style="margin: 2px 0px">
+                    <a href="https://safi-eg.netlify.app/privacy/policies">Rights & Policies</a>
+                </h5>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="data">
+        <div class="welcoming-simulation">
+            <div class="simulation-background">
+                <div class="blending-layer"></div>
+                <video autoplay loop contextmenu="0" preload="auto" playsinline muted>
+                    <source src="../../../assets/static/simulation_egypt_2156157781.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="simulation-layer">
+                <div class="communicate-box">
+                    <img src="./../../../assets/static/logo__white.png" alt="" class="logo">
+                    <div class="welcome-text-area" id="onloadText">
+                        <h1>We hope It was a wonderful time</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-options" style="text-align: center;">
+                <a href="https://safi-eg.netlify.app/about">About</a>
+                <a href="https://safi-eg.netlify.app/privacy/policies">Policies</a>
+                <a href="https://safi-eg.netlify.app/contact">Contact</a>
+                <a href="" class="copyrighted-slogan">&copy; 2024 SAFI Group</a>
+            </div>
+        </div>
+    </footer>
+
+    </div>
+    <script src="../../../js/jquery.min.js"></script>
+    <script src="../../../js/loader.js"></script>
+    <script src="../../../js/header.js"></script>
+    <script src="../../../js/simulation.js"></script>
+
+    <script>
+        const ratingCards = document.querySelectorAll('.rating-card');
+        ratingCards.forEach(card => {
+            card.addEventListener('click', () => {
+                ratingCards.forEach(card => card.classList.remove('active'));
+                card.classList.add('active');
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("video").bind("contextmenu", function () {
+                return false;
+            });
+        });
+    </script>
+
+
+</html>
