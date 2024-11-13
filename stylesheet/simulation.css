@@ -28,6 +28,7 @@
         background-color: black;
         opacity: 0%;
     }
+
     100% {
         background-color: black;
         opacity: 55%;
@@ -82,7 +83,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    
+
 }
 
 .simulation-layer .welcome-text-area h1 {
@@ -100,7 +101,7 @@
     animation-name: timedPushUp;
     animation-delay: 3s;
     animation-duration: .5s;
-    animation-direction: reverse;  
+    animation-direction: reverse;
     animation-fill-mode: forwards;
     text-align: center;
     margin-top: 10px;
@@ -116,7 +117,7 @@ form.main-form {
     animation-name: timedOpacity;
     animation-delay: 3s;
     animation-duration: .5s;
-    animation-direction: reverse;  
+    animation-direction: reverse;
     animation-fill-mode: forwards;
     padding: 0px 20px;
     width: 100%;
@@ -137,22 +138,53 @@ form.main-form {
 }
 
 .special-start-queue {
-        margin: 15px 0px;
-        font-size: 2em !important;
-        font-weight: bold;
-        margin-bottom: 0;
-        text-transform: uppercase !important;
-        text-align: center !important;
+    margin: 15px 0px;
+    font-size: 1em !important;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-transform: uppercase !important;
+    text-align: center !important;
 }
 
 .special-answers-area {
-    width: 50% !important;
+    width: 100% !important;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.option-to-white-convert {
+    height: 35px !important;
+    width: 260px !important;
+    transition: .3s all !important;
+    padding: 55px 25px !important; 
+    background-color: #ffffff00 !important;
+    border: 0px solid #ffffff !important;
+    color: #ffffff !important;
+    background:
+        conic-gradient(#ffffff 0 0) no-repeat calc(200% - var(--p, 0%)) 100% / 200% var(--p, .08em) !important;
+    transition: .2s var(--t, 0s), background-position .2s calc(.2s - var(--t, 0s)) !important;
+}
+
+.option-to-white-convert:hover {
+    /* background-color: white !important;
+    color: black !important; */
+    --p: 100% !important;
+    --t: .3s !important;
+    color: #000000 !important;
+}
+
+.option-to-white-convert:checked {
+    color: #000000 !important;
+    background-color: #fff !important;
+    box-shadow: 0 0 1em #000000, 1px 1px 1em #ffffff9e !important;
 }
 
 /*form overEdit*/
 
 @keyframes timedPushUp {
-    0%   {left:50%; top:20%;}
+    0% {
+        left: 50%;
+        top: 20%;
+    }
 }
 
 @keyframes timedOpacity {
@@ -163,34 +195,38 @@ form.main-form {
 }
 
 @keyframes anim1Text {
-	0% {
-		opacity: 0;
-		transform: scale(0.6);
-	}
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
 
-	100% {
-		opacity: 1;
-		transform: scale(1);
-	}
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @keyframes vibrAnimate {
     0% {
         transform: translate(0);
     }
-    
+
     20% {
         transform: translate(2px, -2px);
     }
+
     40% {
         transform: translate(2px, 2px);
     }
+
     60% {
         transform: translate(-2px, 2px);
     }
+
     80% {
         transform: translate(-2px, -2px);
     }
+
     100% {
         transform: translate(0);
     }
@@ -199,6 +235,10 @@ form.main-form {
 footer {
     background-color: rgba(0, 0, 0, 0);
     box-shadow: 1px 1px 51px 10px rgba(255, 255, 255, 0);
+    width: 100%;
+    position: sticky;
+    transform: translate(0%, -160%);
+    height: 20px;
 }
 
 .footer-container {
@@ -213,7 +253,11 @@ footer a,
 
 @media (min-width: 768px) {
     .simulation-layer .welcome-text-area h1 {
-        font-size: 3em;
+        font-size: 2em;
+    }
+
+    .special-answers-area {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
     }
 }
 
@@ -221,7 +265,8 @@ footer a,
     .simulation-layer .welcome-text-area h1 {
         font-size: 2em;
     }
-    .communicate-box{        
+
+    .communicate-box {
         border: 2px solid white;
     }
 }
@@ -230,7 +275,8 @@ footer a,
     .simulation-layer .welcome-text-area h1 {
         font-size: 4em;
     }
-    .communicate-box{        
+
+    .communicate-box {
         border: 2px solid white;
         border-radius: 60px;
         border-bottom: medium;
@@ -239,7 +285,38 @@ footer a,
         box-shadow: 0em 0em 1em 15px #ffffff1c, inset 0em 0em 12em 0px #00000047;
         backdrop-filter: blur(4px);
     }
+
     @keyframes timedPushUp {
-        0%   {left:50%; top:20%;}
+        0% {
+            left: 50%;
+            top: 20%;
+        }
     }
+
+    .special-answers-area {
+        width: 50% !important;
+    }
+    
+    .special-answers-area {
+        width: 100% !important;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)) !important;
+    }
+
+    .special-start-queue {
+        font-size: 2em !important;
+    }
+    
+    .option-to-white-convert {
+        height: 35px !important;
+        width: 280px !important;
+        transition: .3s all !important;
+        padding: 55px 25px !important; 
+        background-color: #ffffff00 !important;
+        border: 0px solid #ffffff !important;
+        color: #ffffff !important;
+        background:
+            conic-gradient(#ffffff 0 0) no-repeat calc(200% - var(--p, 0%)) 100% / 200% var(--p, .08em) !important;
+        transition: .2s var(--t, 0s), background-position .2s calc(.2s - var(--t, 0s)) !important;
+    }
+    
 }
