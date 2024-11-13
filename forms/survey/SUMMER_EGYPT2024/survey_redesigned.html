@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAFI Group</title>
+    <title>SAFI | Egypt Summer Survey 2024</title>
     <link rel="icon" href="../../../assets/static/framedLogo.png">
     <link rel="stylesheet" href="../../../stylesheet/stylesheet.css">
     <link rel="stylesheet" href="../../../stylesheet/loader.css">
@@ -47,7 +47,7 @@
         <div class="welcoming-simulation">
             <div class="simulation-background">
                 <div class="blending-layer"></div>
-                <video autoplay loop contextmenu="0" preload="auto" playsinline muted>
+                <video autoplay loop contextmenu="0" preload="auto" playsinline muted poster="./../../../assets/static/51548415152.png">
                     <source src="../../../assets/static/simulation_egypt_2156157781.mp4" type="video/mp4">
                 </video>
             </div>
@@ -57,6 +57,46 @@
                     <div class="welcome-text-area" id="onloadText">
                         <h1>We hope It was a wonderful time</h1>
                     </div>
+                    <form id="surveyForm" class="main-form" method="post"
+                        action="https://script.google.com/macros/s/AKfycbylJQToqFAQvW4SJcB1IZSgB_3hxfIjPKdp5m7jlPSb6KiTdRWi3DdHJzWG1dBlnok3Pw/exec"
+                        onsubmit="return validateAndSubmit()">
+                        <input type="text" id="kernal_ID" name="kernal_ID" hidden value="">
+
+                        <div class="question-area special-area">
+                            <h2 class="question-title special-start-queue">
+                                What do you think about it ?
+                            </h2>
+                            <p class="question-description"></p>
+                            <p class="question-description">
+                                This question is for survey prupose.
+                            </p>
+                            <div class="answers-area options-answers-area special-answers-area">
+                                <div class="radio-field">
+                                    <input class="select-options" type="radio" name="visitType" value="leisure">
+                                </div>
+                                <div class="radio-field">
+                                    <input class="select-options" type="radio" name="visitType" value="adventure">
+                                </div>
+                                <div class="radio-field">
+                                    <input class="select-options" type="radio" name="visitType" value="business">
+                                </div>
+                                <div class="radio-field">
+                                    <input class="select-options" type="radio" name="visitType" value="religious">
+                                </div>
+                                <div class="radio-field">
+                                    <input class="select-options" type="radio" name="visitType" value="medical">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                    <div id="videoRights">
+                        &copy; video rights for
+                        <a href="https://www.youtube.com/watch?v=1gIodSs7iI4"><img
+                                src="../../../assets/static/egypt-seeklogo.png" alt="Experience Egypt"
+                                title="Experience Egypt"></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -65,7 +105,7 @@
 
 
 
-    
+
     <footer>
         <div class="container footer-container">
             <div class="footer-options" style="text-align: center;">
@@ -101,5 +141,20 @@
         });
     </script>
 
+    <script>
+        function assignKernalId() {
+            const kernalId = Math.random() * 10000;
+            document.getElementById("kernal_ID").value = kernalId;
+        }
+
+        function validateAndSubmit() {
+            const kernalInput = document.getElementById("kernal_ID").value;
+            if (!kernalInput) {
+                assignKernalId();
+            }
+            return true;
+        }
+        window.addEventListener('load', assignKernalId);
+    </script>
 
 </html>
