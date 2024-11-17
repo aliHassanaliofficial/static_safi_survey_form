@@ -18,10 +18,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 </head>
 
 <body>
@@ -58,11 +55,11 @@
                     <div class="welcome-text-area" id="onloadText">
                         <h1>We hope It was a wonderful time</h1>
                     </div>
-                    <form id="surveyForm" class="main-form" method="post"
+                    <form id="surveyForm" class="main-form timedOpacity" method="post"
                         action="https://script.google.com/macros/s/AKfycbylJQToqFAQvW4SJcB1IZSgB_3hxfIjPKdp5m7jlPSb6KiTdRWi3DdHJzWG1dBlnok3Pw/exec"
                         onsubmit="return validateAndSubmit()">
                         <input type="text" id="kernal_ID" name="kernal_ID" hidden value="">
-
+                        <input type="hidden" id="currentQuestionIndex" value="0">
                         <div class="question-area special-area">
                             <h2 class="question-title special-start-queue">
                                 Did the beauty of Egypt match what you pictured before the trip ?
@@ -73,23 +70,71 @@
                             </p>
                             <div class="answers-area options-answers-area special-answers-area">
                                 <div class="radio-field">
-                                    <input class="select-options option-to-white-convert" type="radio" name="visitType"
-                                        value="NO, I was looking forward for better experience. ">
+                                    <input onclick="assignNo()" id="visitTypeOk"
+                                        class="select-options option-to-white-convert" type="radio"
+                                        name="generalTripRate" value="NO, I was looking forward for better experience.">
                                 </div>
                                 <div class="radio-field">
-                                    <input class="select-options option-to-white-convert" type="radio" name="visitType"
-                                        value="YES, It was more than great experience !!">
+                                    <input onclick="assignOK()" id="visitTypeNo"
+                                        class="select-options option-to-white-convert" type="radio"
+                                        name="generalTripRate" value="YES, It was more than great experience !!">
                                 </div>
                             </div>
                         </div>
+
+
+
+
+
+
                     </form>
-
-
                     <div id="videoRights">
                         &copy; video rights for
                         <a href="https://www.youtube.com/watch?v=1gIodSs7iI4"><img
                                 src="../../../assets/static/egypt-seeklogo.png" alt="Experience Egypt"
                                 title="Experience Egypt"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal myModal">
+            <div class="modal-content">
+                <div class="container">
+                    <span class="close" id="closeModal" style="cursor: pointer;">&times;</span>
+                    <div class="response-field">
+                        <h1 id="RenderResponse"></h1>
+                        <h5 id="ResponseDesc">
+                            Your feedback is invaluable to us to make your next experience better.
+                        </h5>
+                        <h6 class="note">You response will make it better
+                            and make sure that you responses is fully protected for more <a target="_blank"
+                                href="https://safi-eg.netlify.app/privacy/policies">Privacy Policies</a>
+                        </h6>
+                        <form class="main-form data-collect-form" action="">
+                            <div class="question-area">
+                                <h2 class="question-title">
+                                    Your name
+                                </h2>
+                                <p class="question-description"></p>
+                                <div class="answers-area">
+                                    <input type="text" name="clientName" id="clientName" placeholder="Name">
+                                </div>
+
+                                <div class="question-area">
+                                    <h2 class="question-title">
+                                        Your Email address
+                                    </h2>
+                                    <p class="question-description"></p>
+                                    <div class="answers-area">
+                                        <input type="email" name="clientEmail" id="clientEmail"
+                                            placeholder="Email address">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <input type="submit" value="Start the survey" class="submit-button">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -104,7 +149,7 @@
         <div class="container footer-container">
             <div class="footer-options" style="text-align: center;">
                 <a href="https://safi-eg.netlify.app/about">About</a>
-                <a href="https://safi-eg.netlify.app/privacy/policies">Policies</a>
+                <a href="https://safi-eg.netlify.app/privacy/policies" target="_blank">Policies</a>
                 <a href="https://safi-eg.netlify.app/contact">Contact</a>
                 <a href="" class="copyrighted-slogan">&copy; 2024 SAFI Group</a>
             </div>
@@ -149,6 +194,37 @@
             return true;
         }
         window.addEventListener('load', assignKernalId);
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            const radioButtons = $('input[type="radio"]');
+            radioButtons.on('click', function () {
+                $('.welcoming-simulation').fadeTo(300, 1.1);
+                $('.myModal').css('display', 'block');
+                $('body').css('overflow', 'hidden');
+                $('body').css('pointer-events', 'none');
+            });
+            $('#closeModal').on('click', function () {
+                $('.myModal').css('display', 'none');
+                $('.welcoming-simulation').fadeTo(300, 1);
+                $('body').css('overflow', 'auto');
+                $('body').css('pointer-events', 'all');
+            });
+        });
+    </script>
+
+    <script>
+        var RenderResponse = document.getElementById("RenderResponse");
+        var RenderDesc = document.getElementById("RenderDesc");
+        function assignOK() {
+            RenderResponse.innerHTML = "We are Happy for listening that";
+        }
+        function assignNo() {
+            RenderResponse.innerHTML = "We are sorry to hear that your experience didn’t meet your expectations.";
+        }
+
+
     </script>
 
 </html>

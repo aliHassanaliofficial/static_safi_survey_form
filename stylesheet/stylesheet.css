@@ -640,6 +640,57 @@ input[type="radio"].radio-label::before {
     transform: translate(-50%, -50%);
 }
 
+input[type=text] {
+    font-size: 1em;
+    padding: 15px;
+    border-radius: 10px;
+    border-color: #f7f7f785;
+    color: #004d91;
+    border-inline-width: 1px;
+    border-style: solid;
+    border-width: 2px;
+    width: 100%;
+    background-color: #ececec66;
+    -webkit-transition: 0.5s;
+    transition: var(--transition);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 10px 50%;
+    padding-left: 25px;
+    box-shadow: 0 0 10px 2px #00000026;
+    &:focus {
+        border-color: #0c75ff;
+        outline-color: #0c75ff;
+        box-shadow: 0.6em 0.6em 1.2em #d2dce9, -0.5em -0.5em 1em #fff;
+    }
+}
+
+
+input[type=email] {
+    font-size: 1em;
+    padding: 15px;
+    border-radius: 10px;
+    border-color: #f7f7f785;
+    color: #004d91;
+    border-inline-width: 1px;
+    border-style: solid;
+    border-width: 2px;
+    width: 100%;
+    background-color: #ececec66;
+    -webkit-transition: 0.5s;
+    transition: var(--transition);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 10px 50%;
+    padding-left: 25px;
+    box-shadow: 0 0 10px 2px #00000026;
+    &:focus {
+        border-color: #0c75ff;
+        outline-color: #0c75ff;
+        box-shadow: 0.6em 0.6em 1.2em #d2dce9, -0.5em -0.5em 1em #fff;
+    }
+}
+
 @media (min-width: 1200px) {
     iframe {
         width: 100%;
