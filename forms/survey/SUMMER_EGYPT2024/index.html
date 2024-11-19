@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAFI | Egypt Summer Survey 2024</title>
+    <title>SAFI Group</title>
     <link rel="icon" href="../../../assets/static/framedLogo.png">
     <link rel="stylesheet" href="../../../stylesheet/stylesheet.css">
     <link rel="stylesheet" href="../../../stylesheet/loader.css">
     <link rel="stylesheet" href="../../../stylesheet/mediaquery.css">
-    <link rel="stylesheet" href="../../../stylesheet/simulation.css">
     <!-- fontsMerged_CAIRO -t -googlefonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +17,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -39,130 +41,41 @@
         </div>
     </div>
 
-
-    <div class="data">
-        <div class="welcoming-simulation">
-            <div class="simulation-background">
-                <div class="blending-layer"></div>
-                <video autoplay loop contextmenu="0" preload="auto" playsinline muted
-                    poster="./../../../assets/static/51548415152.png">
-                    <source src="../../../assets/static/simulation_egypt_2156157781.mp4" type="video/mp4">
-                </video>
+    <div class="data" style="background-color: white !important">
+        <div class="main-header" id="mainHeader">
+            <div class="container special-container">
+                <a class="special-logo-area" href="https://safi-eg.netlify.app">
+                    <img class="logo special-logo" src="../../../assets/static/logo_recolored_1.png" alt="">
+                </a>
             </div>
-            <div class="simulation-layer">
-                <div class="communicate-box">
-                    <img src="./../../../assets/static/logo__white.png" alt="" class="logo">
-                    <div class="welcome-text-area" id="onloadText">
-                        <h1>We hope It was a wonderful time</h1>
-                    </div>
-                    <form id="surveyForm" class="main-form timedOpacity" method="post"
-                        action="https://script.google.com/macros/s/AKfycbylJQToqFAQvW4SJcB1IZSgB_3hxfIjPKdp5m7jlPSb6KiTdRWi3DdHJzWG1dBlnok3Pw/exec"
-                        onsubmit="return validateAndSubmit()">
-                        <input type="text" id="kernal_ID" name="kernal_ID" hidden value="">
-                        <input type="hidden" id="currentQuestionIndex" value="0">
-                        <div class="question-area special-area">
-                            <h2 class="question-title special-start-queue">
-                                Did the beauty of Egypt match what you pictured before the trip ?
-                            </h2>
-                            <p class="question-description"></p>
-                            <p class="question-description">
-                                This question is for survey prupose only.
-                            </p>
-                            <div class="answers-area options-answers-area special-answers-area">
-                                <div class="radio-field">
-                                    <input onclick="assignNo()" id="visitTypeOk"
-                                        class="select-options option-to-white-convert" type="radio"
-                                        name="generalTripRate" value="NO, I was looking forward for better experience.">
-                                </div>
-                                <div class="radio-field">
-                                    <input onclick="assignOK()" id="visitTypeNo"
-                                        class="select-options option-to-white-convert" type="radio"
-                                        name="generalTripRate" value="YES, It was more than great experience !!">
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-
-
-                    </form>
-                    <div id="videoRights">
-                        &copy; video rights for
-                        <a href="https://www.youtube.com/watch?v=1gIodSs7iI4"><img
-                                src="../../../assets/static/egypt-seeklogo.png" alt="Experience Egypt"
-                                title="Experience Egypt"></a>
-                    </div>
+        </div>
+        <div class="container">
+            <div class="page-frame header">
+                <div class="logo-area">
+                    <img class="logo" src="../../../assets/static/logo_recolored_1.png" alt="">
+                    <hr style="color: #000;">
                 </div>
             </div>
+            <div class="form-section">
+                <!-- <iframe src="../../../survey_set/index.html" frameborder="0" style="height: 100vh;"></iframe> -->
+            </div>
         </div>
 
-        <div id="myModal" class="modal myModal">
-            <div class="modal-content">
-                <div class="container">
-                    <span class="close" id="closeModal" style="cursor: pointer;">&times;</span>
-                    <div class="response-field">
-                        <h1 id="RenderResponse"></h1>
-                        <h5 id="ResponseDesc">
-                            Your feedback is invaluable to us to make your next experience better.
-                        </h5>
-                        <form class="main-form data-collect-form"
-                            action="https://script.google.com/macros/s/AKfycbx6bamdBMe234takYTugOijF_UZUqm98f2TduoDOJzp6INoKC6VtmbENK4fb1TB9IkJ/exec"
-                            method="post" onsubmit="return validateAndSubmit()">
-                            <div class="question-area">
-                                <h2 class="question-title">
-                                    Your name
-                                </h2>
-                                <p class="question-description"></p>
-                                <div class="answers-area">
-                                    <input type="text" name="clientName" id="clientName" placeholder="Name" required>
-                                </div>
-
-                                <div class="question-area">
-                                    <h2 class="question-title">
-                                        Your Email address
-                                    </h2>
-                                    <p class="question-description"></p>
-                                    <div class="answers-area">
-                                        <input type="email" name="clientEmail" id="clientEmail"
-                                            placeholder="Email address" required>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <input id="submitBtn" type="submit" value="Start the survey" class="submit-button">
-                        </form>
-                        <h6 class="note">You response will make it better
-                            and make sure that you responses is fully protected for more <a target="_blank"
-                                href="https://safi-eg.netlify.app/privacy/policies">Privacy Policies</a>
-                        </h6>
-                    </div>
+        <footer>
+            <div class="container footer-container">
+                <div class="footer-options" style="text-align: center;">
+                    <a href="https://safi-eg.netlify.app/about">About</a>
+                    <a href="https://safi-eg.netlify.app/privacy/policies" target="_blank">Policies</a>
+                    <a href="https://safi-eg.netlify.app/contact">Contact</a>
+                    <a href="" class="copyrighted-slogan">&copy; 2024 SAFI Group</a>
                 </div>
             </div>
-        </div>
-    </div>
-
-
-
-
-
-    <footer>
-        <div class="container footer-container">
-            <div class="footer-options" style="text-align: center;">
-                <a href="https://safi-eg.netlify.app/about">About</a>
-                <a href="https://safi-eg.netlify.app/privacy/policies" target="_blank">Policies</a>
-                <a href="https://safi-eg.netlify.app/contact">Contact</a>
-                <a href="" class="copyrighted-slogan">&copy; 2024 SAFI Group</a>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
     </div>
     <script src="../../../js/jquery.min.js"></script>
     <script src="../../../js/loader.js"></script>
     <script src="../../../js/header.js"></script>
-    <script src="../../../js/simulation.js"></script>
 
     <script>
         const ratingCards = document.querySelectorAll('.rating-card');
@@ -174,59 +87,5 @@
         });
     </script>
 
-    <script>
-        $(document).ready(function () {
-            $("video").bind("contextmenu", function () {
-                return false;
-            });
-        });
-    </script>
-
-    <script>
-        function assignKernalId() {
-            const kernalId = Math.random() * 10000;
-            document.getElementById("kernal_ID").value = kernalId;
-        }
-
-        function validateAndSubmit() {
-            const kernalInput = document.getElementById("kernal_ID").value;
-            if (!kernalInput) {
-                assignKernalId();
-            }
-            return true;
-        }
-        window.addEventListener('load', assignKernalId);
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            const radioButtons = $('input[type="radio"]');
-            radioButtons.on('click', function () {
-                $('.welcoming-simulation').fadeTo(300, 1.1);
-                $('.myModal').css('display', 'block');
-                $('body').css('overflow', 'hidden');
-                $('body').css('pointer-events', 'none');
-            });
-            $('#closeModal').on('click', function () {
-                $('.myModal').css('display', 'none');
-                $('.welcoming-simulation').fadeTo(300, 1);
-                $('body').css('overflow', 'auto');
-                $('body').css('pointer-events', 'all');
-            });
-        });
-    </script>
-
-    <script>
-        var RenderResponse = document.getElementById("RenderResponse");
-        var RenderDesc = document.getElementById("RenderDesc");
-        function assignOK() {
-            RenderResponse.innerHTML = "We are Happy for listening that";
-        }
-        function assignNo() {
-            RenderResponse.innerHTML = "We are sorry to hear that your experience didn’t meet your expectations.";
-        }
-
-
-    </script>
 
 </html>
