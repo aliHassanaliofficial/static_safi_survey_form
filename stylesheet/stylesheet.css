@@ -642,7 +642,7 @@ input[type="radio"].radio-label::before {
 
 input[type=text] {
     font-size: 1em;
-    padding: 15px;
+    padding: 10px;
     border-radius: 10px;
     border-color: #f7f7f785;
     color: #004d91;
@@ -668,7 +668,7 @@ input[type=text] {
 
 input[type=email] {
     font-size: 1em;
-    padding: 15px;
+    padding: 10px;
     border-radius: 10px;
     border-color: #f7f7f785;
     color: #004d91;
