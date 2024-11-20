@@ -56,36 +56,137 @@
                     <hr style="color: #000;">
                 </div>
             </div>
+
+
             <div class="form-section">
-                <!-- <iframe src="../../../survey_set/index.html" frameborder="0" style="height: 100vh;"></iframe> -->
-            </div>
-        </div>
+                <div class="container form-container">
+                    <div class="extra-div">
+                        <!-- Replace "YOUR_WEB_APP_URL" with your actual deployment URL -->
+                        <form id="surveyForm" class="main-form" method="post"
+                            action="https://script.google.com/macros/s/AKfycbylJQToqFAQvW4SJcB1IZSgB_3hxfIjPKdp5m7jlPSb6KiTdRWi3DdHJzWG1dBlnok3Pw/exec"
+                            onsubmit="return validateAndSubmit()">
+                            <input type="text" id="kernal_ID" name="kernal_ID" hidden value="">
 
-        <footer>
-            <div class="container footer-container">
-                <div class="footer-options" style="text-align: center;">
-                    <a href="https://safi-eg.netlify.app/about">About</a>
-                    <a href="https://safi-eg.netlify.app/privacy/policies" target="_blank">Policies</a>
-                    <a href="https://safi-eg.netlify.app/contact">Contact</a>
-                    <a href="" class="copyrighted-slogan">&copy; 2024 SAFI Group</a>
+                            <h2 class="questions-type" style="text-align: center; text-transform: uppercase;">Personal
+                                Information</h2>
+
+                            <div class="question-area">
+                                <h2 class="question-title">
+                                    1. What is you name ?
+                                    <span class="required-flag">*</span>
+                                </h2>
+                                <p class="question-description">
+                                    This question is for survey prupose only.
+                                </p>
+                                <div class="answers-area options-answers-area bulks-answers width-broke">
+                                    <input required type="text" name="clientFN" id="clientName" placeholder="First Name">
+                                    <input required type="text" name="clientMN" id="clientName" placeholder="Middle Name">
+                                    <input required type="text" name="clientLN" id="clientName" placeholder="Last Name">
+                                </div>
+                            </div>
+
+                            <div class="width-broke">
+                            <div class="question-area">
+                                <h2 class="question-title">
+                                    2. Your Gender
+                                    <span class="required-flag">*</span>
+                                </h2>
+                                <p class="question-description">
+                                    This question is for survey prupose only.
+                                </p>
+                                <div class="answers-area">
+                                    <select name="clientGender" id="clientGender" class="droplist-input divided-section-droplist" required>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="elseGender">Prefer not to say</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="question-area">
+                                <h2 class="question-title">
+                                    3. Your Birth Date
+                                </h2>
+                                <p class="question-description">
+                                    This question is for survey prupose only.
+                                </p>
+                                <div class="answers-area">
+                                    <input type="date" name="birthDate" id="dataDpart">
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                            <div class="question-area">
+                                <h2 class="question-title">
+                                    3. what is your name ?
+                                </h2>
+                                <p class="question-description"></p>
+                                <p class="question-description">
+                                    This question is for survey prupose only.
+                                </p>
+                                <div class="answers-area options-answers-area bulks-answers">
+                                    <input type="text" name="clientName" id="clientName">
+                                </div>
+                            </div>
+
+
+
+
+
+
+                    </div>
+                    <!-- Submit button -->
+                    <input id="submitBtn" class="submit-button" type="submit" value="Submit">
+                    </form>
                 </div>
+
+                <script>
+                    function assignKernalId() {
+                        const kernalId = Math.random() * 10000;
+                        document.getElementById("kernal_ID").value = kernalId;
+                    }
+
+                    function validateAndSubmit() {
+                        const kernalInput = document.getElementById("kernal_ID").value;
+                        if (!kernalInput) {
+                            assignKernalId();
+                        }
+                        return true;
+                    }
+                    window.addEventListener('load', assignKernalId);
+                </script>
+
+
             </div>
-        </footer>
 
-    </div>
-    <script src="../../../js/jquery.min.js"></script>
-    <script src="../../../js/loader.js"></script>
-    <script src="../../../js/header.js"></script>
+            <footer>
+                <div class="container footer-container">
+                    <div class="footer-options" style="text-align: center;">
+                        <a href="https://safi-eg.netlify.app/about">About</a>
+                        <a href="https://safi-eg.netlify.app/privacy/policies" target="_blank">Policies</a>
+                        <a href="https://safi-eg.netlify.app/contact">Contact</a>
+                        <a href="" class="copyrighted-slogan">&copy; 2024 SAFI Group</a>
+                    </div>
+                </div>
+            </footer>
 
-    <script>
-        const ratingCards = document.querySelectorAll('.rating-card');
-        ratingCards.forEach(card => {
-            card.addEventListener('click', () => {
-                ratingCards.forEach(card => card.classList.remove('active'));
-                card.classList.add('active');
+        </div>
+        <script src="../../../js/jquery.min.js"></script>
+        <script src="../../../js/loader.js"></script>
+        <script src="../../../js/header.js"></script>
+
+        <script>
+            const ratingCards = document.querySelectorAll('.rating-card');
+            ratingCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    ratingCards.forEach(card => card.classList.remove('active'));
+                    card.classList.add('active');
+                });
             });
-        });
-    </script>
+        </script>
 
 
 </html>

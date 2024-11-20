@@ -560,6 +560,10 @@ input[type="radio"].select-options {
     }
 }
 
+.divided-section-droplist {
+    padding: 15px 10px !important;
+}
+
 .submit-button {
     background-color: #f1f1f1;
     color: var(--main-color);
@@ -658,6 +662,7 @@ input[type=text] {
     background-position: 10px 50%;
     padding-left: 25px;
     box-shadow: 0 0 10px 2px #00000026;
+
     &:focus {
         border-color: #0c75ff;
         outline-color: #0c75ff;
@@ -684,11 +689,29 @@ input[type=email] {
     background-position: 10px 50%;
     padding-left: 25px;
     box-shadow: 0 0 10px 2px #00000026;
+
     &:focus {
         border-color: #0c75ff;
         outline-color: #0c75ff;
         box-shadow: 0.6em 0.6em 1.2em #d2dce9, -0.5em -0.5em 1em #fff;
     }
+}
+
+.required-flag {
+    color: red;
+    font-weight: bolder;
+}
+
+.width-broke {
+    display: grid !important;
+    grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
+    grid-gap: 10px 30px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    width: 100%;
+}
+
+.width-broke input {
+    width: 99.33% !important;
 }
 
 @media (min-width: 1200px) {
@@ -723,5 +746,14 @@ input[type=email] {
 
     .question-area p.question-description {
         text-align: start;
+    }
+
+    .width-broke {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
+    .divided-section-droplist {
+        padding: 15px 65px !important;
     }
 }
