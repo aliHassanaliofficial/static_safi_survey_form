@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAFI Group</title>
+    <title>SAFI | Your visit Egypt 2024 </title>
     <link rel="icon" href="../../../assets/static/framedLogo.png">
     <link rel="stylesheet" href="../../../stylesheet/stylesheet.css">
     <link rel="stylesheet" href="../../../stylesheet/loader.css">
@@ -78,7 +78,7 @@
                                     <span class="required-flag">*</span>
                                 </h2>
                                 <p class="question-description">
-                                    This question is for survey prupose only.
+                                    This question is for survey purpose only.
                                 </p>
                                 <div class="answers-area options-answers-area bulks-answers width-broke">
                                     <input required type="text" name="clientFN" id="clientFName"
@@ -89,16 +89,30 @@
                                 </div>
                             </div>
 
+                            <div class="question-area">
+                                <h2 class="question-title">
+                                    2. What is your email address ?
+                                    <span class="required-flag">*</span>
+                                </h2>
+                                <p class="question-description">
+                                    Confirming the recent entered email.
+                                </p>
+                                <div class="answers-area">
+                                    <input type="email" name="email" id="clientEmail" placeholder="Email Address"
+                                        required>
+                                </div>
+                            </div>
+
                             <br>
 
                             <div class="width-broke">
                                 <div class="question-area">
                                     <h2 class="question-title">
-                                        2. Your Gender
+                                        3. What is your Gender ?
                                         <span class="required-flag">*</span>
                                     </h2>
                                     <p class="question-description">
-                                        This question is for survey prupose only.
+                                        This question is for survey purpose only.
                                     </p>
                                     <div class="answers-area">
                                         <select name="clientGender" id="clientGender"
@@ -113,7 +127,7 @@
 
                                 <div class="question-area">
                                     <h2 class="question-title">
-                                        3. Your Birth Date
+                                        4. What is your Birth date ?
                                     </h2>
                                     <p class="question-description">
                                         How we handle your data ? <a target="_blank"
@@ -130,11 +144,12 @@
                             <div class="width-broke">
                                 <div class="question-area">
                                     <h2 class="question-title">
-                                        4. Your Country
+                                        5. What is Your Country ?
                                         <span class="required-flag">*</span>
                                     </h2>
+                                    <p class="question-description"></p>
                                     <p class="question-description">
-                                        The country your are living at right now.
+                                        Where are you from ?
                                     </p>
                                     <div class="answers-area">
                                         <select name="clientHomeTown" id="clientHomeTown"
@@ -410,11 +425,11 @@
 
                                 <div class="question-area">
                                     <h2 class="question-title">
-                                        5. Your Language
+                                        6. What is your primary language ?
                                         <span class="required-flag">*</span>
                                     </h2>
                                     <p class="question-description">
-                                        Your primary language.
+                                        Your mother tongue language.
                                     </p>
                                     <div class="answers-area">
                                         <select name="clientLang" id="clientLang"
@@ -570,13 +585,68 @@
                                 </div>
                             </div>
 
-
+                            <div class="question-area">
+                                <h2 class="question-title">
+                                    7. Do you have any special needs ?
+                                    <span class="required-flag">*</span>
+                                </h2>
+                                <p class="question-description">
+                                    Any dietary restrictions or health considerations.
+                                </p>
+                                <div class="answers-area options-answers-area">
+                                    <div class="radio-field">
+                                        <input required class="select-options" id="specialNeedOK" type="radio"
+                                            name="ifSpecialNeed" value="Yes">
+                                    </div>
+                                    <div class="radio-field">
+                                        <input required class="select-options" id="specialNeedNO" type="radio"
+                                            name="ifSpecialNeed" value="No">
+                                    </div>
+                                </div>
+                                <div id="specialNeedInfoProgress">
+                                    <p class="question-description"></p>
+                                    <p class="question-description">Please feel free to specify your special needs.</p>
+                                    <p class="question-description"><span
+                                            style="text-decoration: underline;">NOTE</span> This question is for survey
+                                        purpose only,<br>Your clarification helps a lot.</p>
+                                    <input type="text" name="typeOfSpecialNeeds" id="typeOfSpecialNeeds"
+                                        placeholder="You can put comma after each one.">
+                                </div>
+                            </div>
 
                     </div>
+
+                    <button id="nextBtn" class="submit-button">Next ></button>
+
                     <!-- Submit button -->
-                    <input id="submitBtn" class="submit-button" type="submit" value="Submit">
+                    <!-- <input id="submitBtn" class="submit-button" type="submit" value="Submit"> -->
                     </form>
                 </div>
+
+                <script>
+                    let currentSectionIndex = 0; // Tracks the current section index
+                    const sections = document.querySelectorAll('.form-section');
+                    const prevBtn = document.getElementById('prevBtn');
+                    const nextBtn = document.getElementById('nextBtn');
+                    const submitBtn = document.getElementById('submitBtn');
+
+                    function navigateSections(direction) {
+                        // Hide the current section
+                        sections[currentSectionIndex].style.display = 'none';
+
+                        // Update the current section index
+                        currentSectionIndex += direction;
+
+                        // Show the new section
+                        sections[currentSectionIndex].style.display = 'block';
+
+                        // Update button visibility
+                        prevBtn.style.display = currentSectionIndex === 0 ? 'none' : 'inline-block';
+                        nextBtn.style.display = currentSectionIndex === sections.length - 1 ? 'none' : 'inline-block';
+                        submitBtn.style.display = currentSectionIndex === sections.length - 1 ? 'inline-block' : 'none';
+                    }
+
+                </script>
 
                 <script>
                     function assignKernalId() {
@@ -638,9 +708,25 @@
                 ageInput.value = isNaN(age) ? "" : age;
             });
         </script>
-
         <script>
-            console.clear();
+            document.addEventListener('DOMContentLoaded', () => {
+                const radioButtons = document.querySelectorAll('input[name="ifSpecialNeed"]');
+                const specialNeedInfoProgress = document.getElementById("specialNeedInfoProgress");
+                radioButtons.forEach(radioButton => {
+                    radioButton.addEventListener('change', () => {
+                        if (radioButton.checked) {
+                            const selectedValue = radioButton.value;
+                            if (selectedValue === 'Yes') {
+                                specialNeedInfoProgress.classList.remove("DisplayNOTRNST");
+                                specialNeedInfoProgress.classList.add("DisplayOKTRNST");
+                            } else if (selectedValue === 'No') {
+                                specialNeedInfoProgress.classList.add("DisplayNOTRNST");
+                                specialNeedInfoProgress.classList.remove("DisplayOKTRNST");
+                            }
+                        }
+                    });
+                });
+            });
         </script>
 
 </html>

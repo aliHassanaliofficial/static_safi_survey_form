@@ -170,7 +170,7 @@ footer {
     transform: translateX(-50%);
     background-color: white;
     height: 100px;
-    box-shadow: 1px 1px 51px 10px white;
+    /* box-shadow: 1px 1px 51px 10px white; */
 }
 
 .footer-container {
@@ -466,6 +466,7 @@ form.main-form {
 .answers-area {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 input[type="radio"] {
@@ -549,6 +550,7 @@ input[type="radio"].select-options {
     font-weight: bold;
     transition: .3s all;
     width: 99.333%;
+
     &:hover {
         cursor: pointer;
         transition: .3s all;
@@ -715,6 +717,80 @@ input[type=email] {
 .width-broke input {
     width: 99.33% !important;
 }
+
+#specialNeedInfoProgress {
+    display: none;
+    width: 100%;
+}
+
+.DisplayNOTRNST {
+    display: none !important;
+	-webkit-animation: slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+.DisplayOKTRNST {
+    display: block !important;
+    -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-out-top {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateY(-1000px);
+        transform: translateY(-1000px);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-out-top {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateY(-1000px);
+        transform: translateY(-1000px);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes slide-in-top {
+    0% {
+        -webkit-transform: translateY(-1000px);
+        transform: translateY(-1000px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-top {
+    0% {
+        -webkit-transform: translateY(-1000px);
+        transform: translateY(-1000px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 
 @media (min-width: 1200px) {
     iframe {
