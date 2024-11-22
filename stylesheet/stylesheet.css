@@ -548,7 +548,7 @@ input[type="radio"].select-options {
     font-size: 16px;
     font-weight: bold;
     transition: .3s all;
-
+    width: 99.333%;
     &:hover {
         cursor: pointer;
         transition: .3s all;
@@ -593,8 +593,10 @@ input#dataDpart {
 }
 
 .questions-type-title {
+    text-transform: uppercase;
+    font-weight: bold;
     width: 100%;
-    text-align: center;
+    font-size: 1.5rem;
 }
 
 .questions-type-title h1 {
