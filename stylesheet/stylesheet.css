@@ -756,4 +756,8 @@ input[type=email] {
     .divided-section-droplist {
         padding: 15px 65px !important;
     }
+
+    input#dataDpart {
+        padding: 15px 65px !important;
+    }
 }
