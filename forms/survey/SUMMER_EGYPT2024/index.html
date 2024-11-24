@@ -643,185 +643,213 @@
                             <div id="questionPhase2" class="question-phase" style="display: none;">
                                 <h2 class="questions-type-title">
                                     <strong>|</strong>
-                                    Welcome
+                                    Trip Specifications
                                 </h2>
+
+                                <div class="question-area">
+                                    <h2 class="question-title">
+                                        8. What was the purpose of your trip to Egypt ?
+                                        <span class="required-flag">*</span>
+                                    </h2>
+                                    <p class="question-description">
+                                        Any dietary restrictions or health considerations.
+                                    </p>
+                                    <div class="answers-area options-answers-area">
+                                        <div class="radio-field">
+                                            <input class="select-options" type="radio" name="visitType" value="leisure">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input class="select-options" type="radio" name="visitType" value="adventure">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input class="select-options" type="radio" name="visitType" value="business">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input class="select-options" type="radio" name="visitType" value="religious">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input class="select-options" type="radio" name="visitType" value="medical">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
-
-                            
-
-                            <div class="form-navigation">
-                                <button type="button" class="submit-button" id="prevBtn" onclick="navigateSections(-1)"
-                                    style="display: none;">Previous</button>
-                                <button type="button" class="submit-button" id="nextBtn"
-                                    onclick="navigateSections(1)">Next</button>
-                                <button type="submit" id="submitBtn" class="submit-button"
-                                    style="display: none;">Submit</button>
-                            </div>
-                        </form>
                     </div>
+
+
+
+
+                    <div class="form-navigation">
+                        <button type="button" class="submit-button special-submit-btn" id="prevBtn" onclick="navigateSections(-1)"
+                            style="display: none;">Previous</button>
+                        <button type="button" class="submit-button special-submit-btn" id="nextBtn"
+                            onclick="navigateSections(1)">Next</button>
+                        <button type="submit" id="submitBtn" class="submit-button special-submit-btn"
+                            style="display: none;">Submit</button>
+                    </div>
+                    </form>
                 </div>
-
-                <script>
-                    let currentSectionIndex = 0; // Tracks the current section index
-                    const sections = document.querySelectorAll('.question-phase');
-                    const prevBtn = document.getElementById('prevBtn');
-                    const nextBtn = document.getElementById('nextBtn');
-                    const submitBtn = document.getElementById('submitBtn');
-                    const progressBar = document.getElementById('progressBar');
-
-                    // Function to validate required fields in the current section
-                    function validateCurrentSection() {
-                        const currentSection = sections[currentSectionIndex];
-                        const inputs = currentSection.querySelectorAll('[required]');
-                        let isValid = true;
-
-                        inputs.forEach((input) => {
-                            if (!input.checkValidity()) {
-                                isValid = false;
-                                input.classList.add('error'); // Add error styling
-                            } else {
-                                input.classList.remove('error'); // Remove error styling
-                            }
-                        });
-
-                        return isValid;
-                    }
-
-                    // Function to update the progress bar
-                    function updateProgressBar() {
-                        const progressPercentage = ((currentSectionIndex + 1) / sections.length) * 100;
-                        progressBar.style.width = `${progressPercentage}%`;
-                    }
-
-                    // Function to navigate sections
-                    function navigateSections(direction) {
-                        // Validate current section before moving forward
-                        if (direction === 1 && !validateCurrentSection()) {
-                            document.getElementById("VerifyFieldsWarn").style.display = 'block';
-                            return;
-                        }
-
-                        // Hide the current section
-                        sections[currentSectionIndex].style.display = 'none';
-
-                        // Update the current section index
-                        currentSectionIndex += direction;
-
-                        // Show the new section
-                        sections[currentSectionIndex].style.display = 'block';
-
-                        // Update button visibility
-                        prevBtn.style.display = currentSectionIndex === 0 ? 'none' : 'inline-block';
-                        nextBtn.style.display = currentSectionIndex === sections.length - 1 ? 'none' : 'inline-block';
-                        submitBtn.style.display = currentSectionIndex === sections.length - 1 ? 'inline-block' : 'none';
-
-                        // Update the progress bar
-                        updateProgressBar();
-                    }
-
-                    // Form submission validation
-                    function validateAndSubmit() {
-                        if (!validateCurrentSection()) {
-                            alert('Please complete all required fields before submitting.');
-                            return false;
-                        }
-                        alert('Form submitted successfully!');
-                        return true;
-                    }
-
-                    // Initialize progress bar and section visibility on page load
-                    document.addEventListener('DOMContentLoaded', () => {
-                        sections.forEach((section, index) => {
-                            section.style.display = index === 0 ? 'block' : 'none';
-                        });
-                        prevBtn.style.display = 'none'; // Hide the "Previous" button initially
-                        submitBtn.style.display = 'none'; // Hide the "Submit" button initially
-                        updateProgressBar(); // Initialize the progress bar
-                    });
-
-                </script>
-
-                <script>
-                    function assignKernalId() {
-                        const kernalId = Math.random() * 10000;
-                        document.getElementById("kernal_ID").value = kernalId;
-                    }
-
-                    function validateAndSubmit() {
-                        const kernalInput = document.getElementById("kernal_ID").value;
-                        if (!kernalInput) {
-                            assignKernalId();
-                        }
-                        return true;
-                    }
-                    window.addEventListener('load', assignKernalId);
-                </script>
-
-
             </div>
 
-            <footer>
-                <div class="container footer-container">
-                    <div class="footer-options" style="text-align: center;">
-                        <a href="https://safi-eg.netlify.app/about">About</a>
-                        <a href="https://safi-eg.netlify.app/privacy/policies" target="_blank">Policies</a>
-                        <a href="https://safi-eg.netlify.app/contact">Contact</a>
-                        <a href="" class="copyrighted-slogan">&copy; 2024 SAFI Group</a>
-                    </div>
-                </div>
-            </footer>
+            <script>
+                let currentSectionIndex = 0; // Tracks the current section index
+                const sections = document.querySelectorAll('.question-phase');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                const submitBtn = document.getElementById('submitBtn');
+                const progressBar = document.getElementById('progressBar');
 
-        </div>
-        <script src="../../../js/jquery.min.js"></script>
-        <script src="../../../js/loader.js"></script>
-        <script src="../../../js/header.js"></script>
+                // Function to validate required fields in the current section
+                function validateCurrentSection() {
+                    const currentSection = sections[currentSectionIndex];
+                    const inputs = currentSection.querySelectorAll('[required]');
+                    let isValid = true;
 
-        <script>
-            const ratingCards = document.querySelectorAll('.rating-card');
-            ratingCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    ratingCards.forEach(card => card.classList.remove('active'));
-                    card.classList.add('active');
-                });
-            });
-        </script>
-
-        <script>
-            const birthDateInput = document.getElementById("dataDpart");
-            const ageInput = document.getElementById("clientAge");
-            birthDateInput.addEventListener("input", () => {
-                const birthDate = new Date(birthDateInput.value);
-                const today = new Date();
-                let age = today.getFullYear() - birthDate.getFullYear();
-                const monthDifference = today.getMonth() - birthDate.getMonth();
-
-                if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
-                    age--;
-                }
-                ageInput.value = isNaN(age) ? "" : age;
-            });
-        </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const radioButtons = document.querySelectorAll('input[name="ifSpecialNeed"]');
-                const specialNeedInfoProgress = document.getElementById("specialNeedInfoProgress");
-                radioButtons.forEach(radioButton => {
-                    radioButton.addEventListener('change', () => {
-                        if (radioButton.checked) {
-                            const selectedValue = radioButton.value;
-                            if (selectedValue === 'Yes') {
-                                specialNeedInfoProgress.classList.remove("DisplayNOTRNST");
-                                specialNeedInfoProgress.classList.add("DisplayOKTRNST");
-                            } else if (selectedValue === 'No') {
-                                specialNeedInfoProgress.classList.add("DisplayNOTRNST");
-                                specialNeedInfoProgress.classList.remove("DisplayOKTRNST");
-                            }
+                    inputs.forEach((input) => {
+                        if (!input.checkValidity()) {
+                            isValid = false;
+                            input.classList.add('error'); // Add error styling
+                        } else {
+                            input.classList.remove('error'); // Remove error styling
                         }
                     });
+
+                    return isValid;
+                }
+
+                // Function to update the progress bar
+                function updateProgressBar() {
+                    const progressPercentage = ((currentSectionIndex + 1) / sections.length) * 100;
+                    progressBar.style.width = `${progressPercentage}%`;
+                }
+
+                // Function to navigate sections
+                function navigateSections(direction) {
+                    // Validate current section before moving forward
+                    if (direction === 1 && !validateCurrentSection()) {
+                        document.getElementById("VerifyFieldsWarn").style.display = 'block';
+                        return;
+                    }
+
+                    // Hide the current section
+                    sections[currentSectionIndex].style.display = 'none';
+
+                    // Update the current section index
+                    currentSectionIndex += direction;
+
+                    // Show the new section
+                    sections[currentSectionIndex].style.display = 'block';
+
+                    // Update button visibility
+                    prevBtn.style.display = currentSectionIndex === 0 ? 'none' : 'inline-block';
+                    nextBtn.style.display = currentSectionIndex === sections.length - 1 ? 'none' : 'inline-block';
+                    submitBtn.style.display = currentSectionIndex === sections.length - 1 ? 'inline-block' : 'none';
+
+                    // Update the progress bar
+                    updateProgressBar();
+                }
+
+                // Form submission validation
+                function validateAndSubmit() {
+                    if (!validateCurrentSection()) {
+                        alert('Please complete all required fields before submitting.');
+                        return false;
+                    }
+                    alert('Form submitted successfully!');
+                    return true;
+                }
+
+                // Initialize progress bar and section visibility on page load
+                document.addEventListener('DOMContentLoaded', () => {
+                    sections.forEach((section, index) => {
+                        section.style.display = index === 0 ? 'block' : 'none';
+                    });
+                    prevBtn.style.display = 'none'; // Hide the "Previous" button initially
+                    submitBtn.style.display = 'none'; // Hide the "Submit" button initially
+                    updateProgressBar(); // Initialize the progress bar
+                });
+
+            </script>
+
+            <script>
+                function assignKernalId() {
+                    const kernalId = Math.random() * 10000;
+                    document.getElementById("kernal_ID").value = kernalId;
+                }
+
+                function validateAndSubmit() {
+                    const kernalInput = document.getElementById("kernal_ID").value;
+                    if (!kernalInput) {
+                        assignKernalId();
+                    }
+                    return true;
+                }
+                window.addEventListener('load', assignKernalId);
+            </script>
+
+
+        </div>
+
+        <footer>
+            <div class="container footer-container">
+                <div class="footer-options" style="text-align: center;">
+                    <a href="https://safi-eg.netlify.app/about">About</a>
+                    <a href="https://safi-eg.netlify.app/privacy/policies" target="_blank">Policies</a>
+                    <a href="https://safi-eg.netlify.app/contact">Contact</a>
+                    <a href="" class="copyrighted-slogan">&copy; 2024 SAFI Group</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <script src="../../../js/jquery.min.js"></script>
+    <script src="../../../js/loader.js"></script>
+    <script src="../../../js/header.js"></script>
+
+    <script>
+        const ratingCards = document.querySelectorAll('.rating-card');
+        ratingCards.forEach(card => {
+            card.addEventListener('click', () => {
+                ratingCards.forEach(card => card.classList.remove('active'));
+                card.classList.add('active');
+            });
+        });
+    </script>
+
+    <script>
+        const birthDateInput = document.getElementById("dataDpart");
+        const ageInput = document.getElementById("clientAge");
+        birthDateInput.addEventListener("input", () => {
+            const birthDate = new Date(birthDateInput.value);
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDifference = today.getMonth() - birthDate.getMonth();
+
+            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            ageInput.value = isNaN(age) ? "" : age;
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const radioButtons = document.querySelectorAll('input[name="ifSpecialNeed"]');
+            const specialNeedInfoProgress = document.getElementById("specialNeedInfoProgress");
+            radioButtons.forEach(radioButton => {
+                radioButton.addEventListener('change', () => {
+                    if (radioButton.checked) {
+                        const selectedValue = radioButton.value;
+                        if (selectedValue === 'Yes') {
+                            specialNeedInfoProgress.classList.remove("DisplayNOTRNST");
+                            specialNeedInfoProgress.classList.add("DisplayOKTRNST");
+                        } else if (selectedValue === 'No') {
+                            specialNeedInfoProgress.classList.add("DisplayNOTRNST");
+                            specialNeedInfoProgress.classList.remove("DisplayOKTRNST");
+                        }
+                    }
                 });
             });
-        </script>
+        });
+    </script>
 
 
 </html>

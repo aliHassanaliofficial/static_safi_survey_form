@@ -444,7 +444,11 @@ iframe {
 .progress-bar {
     height: 100%;
     width: 0%; /* Start at 0% */
-    background-color: #4caf50; /* Progress bar color */
+    background: rgb(69,179,254);
+background: -moz-linear-gradient(90deg, rgba(69,179,254,1) 0%, rgba(199,46,218,1) 46%, rgba(164,65,255,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(69,179,254,1) 0%, rgba(199,46,218,1) 46%, rgba(164,65,255,1) 100%);
+background: linear-gradient(90deg, rgba(69,179,254,1) 0%, rgba(199,46,218,1) 46%, rgba(164,65,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#45b3fe",endColorstr="#a441ff",GradientType=1);
     transition: width 0.3s ease; /* Smooth animation */
 }
 
@@ -459,7 +463,6 @@ iframe {
 form.main-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .question-area {
@@ -596,7 +599,7 @@ input[type="radio"].select-options {
     padding: 15px 40px;
     font-size: 15px;
     font-weight: bold;
-    margin: 35px;
+    margin: 35px 20px;
 }
 
 .submit-button:hover {
@@ -604,6 +607,19 @@ input[type="radio"].select-options {
     background-color: var(--main-color);
     color: #f1f1f1;
     transition: .3s all;
+}
+
+.special-submit-btn {
+    background-color: initial;
+    color: #007AFF;
+    transition: var(--transition);
+    border: none;
+    &:hover {
+        background-color: initial;
+        color: #0046d5;
+        transition: var(--transition);
+        border: none;
+    }
 }
 
 input#dataDpart {
@@ -620,6 +636,7 @@ input#dataDpart {
     font-weight: bold;
     width: 100%;
     font-size: 1.5rem;
+    padding: 20px 0px;
 }
 
 .questions-type-title h1 {
@@ -760,6 +777,14 @@ input.error,
 select.error {
     border: 2px solid rgb(206, 53, 15);
     background-color: #ffe6e6;
+}
+
+.form-navigation {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .error-msg {
