@@ -599,7 +599,6 @@ input[type="radio"].select-options {
     padding: 15px 40px;
     font-size: 15px;
     font-weight: bold;
-    margin: 35px 20px;
 }
 
 .submit-button:hover {
@@ -813,6 +812,7 @@ select.error {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    margin: 25px 0px;
 }
 
 .error-msg {
@@ -821,7 +821,7 @@ select.error {
 }
 
 #daysSpent {
-    width: 30% !important;
+    width: 100% !important;
 }
 
 @-webkit-keyframes slide-out-top {
@@ -927,4 +927,9 @@ select.error {
     input#dataDpart {
         padding: 15px 65px !important;
     }
+
+    #daysSpent {
+        width: 30%;
+    }
+
 }
