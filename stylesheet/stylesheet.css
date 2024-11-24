@@ -614,6 +614,7 @@ input[type="radio"].select-options {
     color: #007AFF;
     transition: var(--transition);
     border: none;
+    outline: none !important;
     &:hover {
         background-color: initial;
         color: #0046d5;
@@ -712,6 +713,32 @@ input[type=text] {
     }
 }
 
+input[type=number] {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: #f7f7f785;
+    color: #004d91;
+    border-inline-width: 1px;
+    border-style: solid;
+    border-width: 2px;
+    width: 30% !important;
+    background-color: #ececec66;
+    -webkit-transition: 0.5s;
+    transition: var(--transition);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 10px 50%;
+    padding-left: 25px;
+    box-shadow: 0 0 10px 2px #00000026;
+
+    &:focus {
+        border-color: #0c75ff;
+        outline-color: #0c75ff;
+        box-shadow: 0.6em 0.6em 1.2em #d2dce9, -0.5em -0.5em 1em #fff;
+    }
+}
+
 
 input[type=email] {
     font-size: 1em;
@@ -750,6 +777,7 @@ input[type=email] {
     grid-gap: 10px 30px;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     width: 100%;
+    align-items: center;
 }
 
 .width-broke input {
@@ -790,6 +818,10 @@ select.error {
 .error-msg {
     color: rgb(151, 0, 0);
     background-color: #ffe6e6;
+}
+
+#daysSpent {
+    width: 30% !important;
 }
 
 @-webkit-keyframes slide-out-top {

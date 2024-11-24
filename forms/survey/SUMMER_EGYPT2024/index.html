@@ -652,26 +652,66 @@
                                         <span class="required-flag">*</span>
                                     </h2>
                                     <p class="question-description">
-                                        Any dietary restrictions or health considerations.
+                                        What was you main goal during your visit ?
                                     </p>
                                     <div class="answers-area options-answers-area">
                                         <div class="radio-field">
-                                            <input class="select-options" type="radio" name="visitType" value="leisure">
+                                            <input required class="select-options" type="radio" name="visitType" value="leisure">
                                         </div>
                                         <div class="radio-field">
-                                            <input class="select-options" type="radio" name="visitType" value="adventure">
+                                            <input required class="select-options" type="radio" name="visitType" value="adventure">
                                         </div>
                                         <div class="radio-field">
-                                            <input class="select-options" type="radio" name="visitType" value="business">
+                                            <input required class="select-options" type="radio" name="visitType" value="business">
                                         </div>
                                         <div class="radio-field">
-                                            <input class="select-options" type="radio" name="visitType" value="religious">
+                                            <input required class="select-options" type="radio" name="visitType" value="religious">
                                         </div>
                                         <div class="radio-field">
-                                            <input class="select-options" type="radio" name="visitType" value="medical">
+                                            <input required class="select-options" type="radio" name="visitType" value="medical">
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="question-area">
+                                    <h2 class="question-title">
+                                        9. Was it group or independent travel ?
+                                        <span class="required-flag">*</span>
+                                    </h2>
+                                    <p class="question-description">
+                                        This question is for survey purpose only.
+                                    </p>
+                                    <div class="answers-area options-answers-area options-answers-area bulks-answers">
+                                        <div class="radio-field">
+                                            <input required id="travelCompanion1" type="radio" name="travelCompanion" class="radio-label">
+                                            <label for="travelCompanion1" class="radio-name">independent</label>
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required id="travelCompanion2" type="radio" name="travelCompanion" class="radio-label">
+                                            <label for="travelCompanion2" class="radio-name">group (family)</label>
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required id="travelCompanion3" type="radio" name="travelCompanion" class="radio-label">
+                                            <label for="travelCompanion3" class="radio-name">group (tourism company /
+                                                application)</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="question-area">
+                                    <h2 class="question-title">
+                                        10. How long was your visit ?
+                                        <span class="required-flag">*</span>
+                                    </h2>
+                                    <p class="question-description">
+                                        This question is for survey purpose only.
+                                    </p>
+                                    <div class="answers-area options-answers-area width-broke">
+                                        <input type="number" name="daysSpent" id="daysSpent"
+                                            placeholder="Number of spent days."> <span>/ Day(s)</span>
+                                    </div>
+                                </div>
+
                             </div>
                     </div>
 
@@ -680,9 +720,9 @@
 
                     <div class="form-navigation">
                         <button type="button" class="submit-button special-submit-btn" id="prevBtn" onclick="navigateSections(-1)"
-                            style="display: none;">Previous</button>
+                            style="display: none;">< Previous</button>
                         <button type="button" class="submit-button special-submit-btn" id="nextBtn"
-                            onclick="navigateSections(1)">Next</button>
+                            onclick="navigateSections(1)">Next ></button>
                         <button type="submit" id="submitBtn" class="submit-button special-submit-btn"
                             style="display: none;">Submit</button>
                     </div>
