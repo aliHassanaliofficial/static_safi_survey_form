@@ -656,19 +656,24 @@
                                     </p>
                                     <div class="answers-area options-answers-area">
                                         <div class="radio-field">
-                                            <input required class="select-options" type="radio" name="visitType" value="leisure">
+                                            <input required class="select-options" type="radio" name="visitType"
+                                                value="leisure">
                                         </div>
                                         <div class="radio-field">
-                                            <input required class="select-options" type="radio" name="visitType" value="adventure">
+                                            <input required class="select-options" type="radio" name="visitType"
+                                                value="adventure">
                                         </div>
                                         <div class="radio-field">
-                                            <input required class="select-options" type="radio" name="visitType" value="business">
+                                            <input required class="select-options" type="radio" name="visitType"
+                                                value="business">
                                         </div>
                                         <div class="radio-field">
-                                            <input required class="select-options" type="radio" name="visitType" value="religious">
+                                            <input required class="select-options" type="radio" name="visitType"
+                                                value="religious">
                                         </div>
                                         <div class="radio-field">
-                                            <input required class="select-options" type="radio" name="visitType" value="medical">
+                                            <input required class="select-options" type="radio" name="visitType"
+                                                value="medical">
                                         </div>
                                     </div>
                                 </div>
@@ -683,15 +688,18 @@
                                     </p>
                                     <div class="answers-area options-answers-area options-answers-area bulks-answers">
                                         <div class="radio-field">
-                                            <input required id="travelCompanion1" type="radio" name="travelCompanion" class="radio-label">
+                                            <input required id="travelCompanion1" type="radio" name="travelCompanion"
+                                                class="radio-label">
                                             <label for="travelCompanion1" class="radio-name">independent</label>
                                         </div>
                                         <div class="radio-field">
-                                            <input required id="travelCompanion2" type="radio" name="travelCompanion" class="radio-label">
+                                            <input required id="travelCompanion2" type="radio" name="travelCompanion"
+                                                class="radio-label">
                                             <label for="travelCompanion2" class="radio-name">group (family)</label>
                                         </div>
                                         <div class="radio-field">
-                                            <input required id="travelCompanion3" type="radio" name="travelCompanion" class="radio-label">
+                                            <input required id="travelCompanion3" type="radio" name="travelCompanion"
+                                                class="radio-label">
                                             <label for="travelCompanion3" class="radio-name">group (tourism company /
                                                 application)</label>
                                         </div>
@@ -707,8 +715,9 @@
                                         This question is for survey purpose only.
                                     </p>
                                     <div class="answers-area options-answers-area width-broke">
-                                        <input type="number" name="daysSpent" id="daysSpent"
-                                            placeholder="Number of spent days."> <span style="width: 50%;">/ Day(s)</span>
+                                        <input min="1" type="number" name="daysSpent" id="daysSpent"
+                                            placeholder="Number of spent days." oninput="updateDaysSpent()"> <span style="width: 50%;">/
+                                            Day(s)</span>
                                     </div>
                                 </div>
 
@@ -719,12 +728,13 @@
 
 
                     <div class="form-navigation">
-                        <button type="button" class="submit-button special-submit-btn" id="prevBtn" onclick="navigateSections(-1)"
-                            style="display: none;">< Previous</button>
-                        <button type="button" class="submit-button special-submit-btn" id="nextBtn"
-                            onclick="navigateSections(1)">Next ></button>
-                        <button type="submit" id="submitBtn" class="submit-button special-submit-btn"
-                            style="display: none;">Submit</button>
+                        <button type="button" class="submit-button special-submit-btn" id="prevBtn"
+                            onclick="navigateSections(-1)" style="display: none;">
+                            < Previous</button>
+                                <button type="button" class="submit-button special-submit-btn" id="nextBtn"
+                                    onclick="navigateSections(1)">Next ></button>
+                                <button type="submit" id="submitBtn" class="submit-button special-submit-btn"
+                                    style="display: none;">Submit</button>
                     </div>
                     </form>
                 </div>
@@ -889,6 +899,23 @@
                 });
             });
         });
+    </script>
+
+    <script>
+        function updateDaysSpent() {
+            // Get the input field value
+            const inputField = document.getElementById("daysSpent");
+            const resultField = document.getElementById("result");
+            let days = parseInt(inputField.value, 10); // Parse the input as an integer
+
+            // Validate the input
+            if (isNaN(days) || days <= 0) {
+                days = 1; // Default to 1 if the input is invalid or <= 0
+            }
+
+            // Update the result dynamically
+            resultField.textContent = `Days spent in Egypt: ${days}`;
+        }
     </script>
 
 
