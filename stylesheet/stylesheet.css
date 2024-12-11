@@ -443,13 +443,15 @@ iframe {
 /* Progress bar fill */
 .progress-bar {
     height: 100%;
-    width: 0%; /* Start at 0% */
-    background: rgb(69,179,254);
-background: -moz-linear-gradient(90deg, rgba(69,179,254,1) 0%, rgba(199,46,218,1) 46%, rgba(164,65,255,1) 100%);
-background: -webkit-linear-gradient(90deg, rgba(69,179,254,1) 0%, rgba(199,46,218,1) 46%, rgba(164,65,255,1) 100%);
-background: linear-gradient(90deg, rgba(69,179,254,1) 0%, rgba(199,46,218,1) 46%, rgba(164,65,255,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#45b3fe",endColorstr="#a441ff",GradientType=1);
-    transition: width 0.3s ease; /* Smooth animation */
+    width: 0%;
+    /* Start at 0% */
+    background: rgb(69, 179, 254);
+    background: -moz-linear-gradient(90deg, rgba(69, 179, 254, 1) 0%, rgba(199, 46, 218, 1) 46%, rgba(164, 65, 255, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(69, 179, 254, 1) 0%, rgba(199, 46, 218, 1) 46%, rgba(164, 65, 255, 1) 100%);
+    background: linear-gradient(90deg, rgba(69, 179, 254, 1) 0%, rgba(199, 46, 218, 1) 46%, rgba(164, 65, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#45b3fe", endColorstr="#a441ff", GradientType=1);
+    transition: width 0.3s ease;
+    /* Smooth animation */
 }
 
 .form-container {
@@ -492,6 +494,32 @@ form.main-form {
     flex-direction: row;
     width: 100%;
 }
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 15rem;
+}
+
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #ededed;
+    border-radius: 9.5rem;
+    height: 0.8rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -1.5999999999999996px;
+    background-color: #007AFF;
+    border-radius: 0.5rem;
+    height: 1rem;
+    width: 1rem;
+}
+
 
 input[type="radio"] {
     appearance: none;
@@ -538,7 +566,7 @@ input[type="radio"]::before {
 .options-answers-area {
     display: grid;
     grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
-    grid-gap: 10px 50px;
+    grid-gap: 10px 55px;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     width: 100%;
 }
@@ -550,7 +578,7 @@ input[type="radio"].select-options {
     height: 35px;
     width: 120px;
     transition: .3s all;
-    padding: 15px;
+    padding: 22px;
 
     &:hover {
         background-color: #007AFF;
@@ -596,7 +624,7 @@ input[type="radio"].select-options {
     transition: .3s all;
     border: none;
     border-radius: 7px;
-    padding: 15px 40px;
+    padding: 10px 20px;
     font-size: 15px;
     font-weight: bold;
 }
@@ -614,6 +642,7 @@ input[type="radio"].select-options {
     transition: var(--transition);
     border: none;
     outline: none !important;
+
     &:hover {
         background-color: initial;
         color: #0046d5;
@@ -783,7 +812,8 @@ input[type=email] {
     width: 99.33% !important;
 }
 
-#specialNeedInfoProgress {
+#specialNeedInfoProgress,
+#ifPlanDone {
     display: none;
     width: 100%;
 }
@@ -806,13 +836,24 @@ select.error {
     background-color: #ffe6e6;
 }
 
+.rate-area-questions {
+    grid-template-rows: repeat(auto-fill, minmax(40px, 1fr)) !important;
+    grid-gap: 0px !important;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)) !important;
+}
+
+.rate-area-questions input {
+    padding: 18px 15px !important;
+    width: 20px !important;
+}
+
 .form-navigation {
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    margin: 25px 0px;
+    margin: 15px 0px 30px;
 }
 
 .error-msg {
@@ -932,4 +973,28 @@ select.error {
         width: 30%;
     }
 
+}
+
+
+.powered-by-collabolator {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 100%;
+    transform: translateY(-100%);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    filter: grayscale(1) opacity(0.3);
+}
+
+.powered-by-collabolator h3 {
+    font-size: 1em !important;
+}
+
+.powered-by-collabolator img {
+    width: 40%;
+    margin-left: 10px;
 }

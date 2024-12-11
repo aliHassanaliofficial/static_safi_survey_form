@@ -643,7 +643,7 @@
                             <div id="questionPhase2" class="question-phase" style="display: none;">
                                 <h2 class="questions-type-title">
                                     <strong>|</strong>
-                                    Trip Specifications
+                                    General Trip Satisfaction
                                 </h2>
 
                                 <div class="question-area">
@@ -715,131 +715,260 @@
                                         This question is for survey purpose only.
                                     </p>
                                     <div class="answers-area options-answers-area width-broke">
-                                        <input min="1" type="number" name="daysSpent" id="daysSpent"
-                                            placeholder="Number of spent days." oninput="updateDaysSpent()"> <span style="width: 50%;">/
+                                        <input required min="1" type="number" name="daysSpent" id="daysSpent"
+                                            placeholder="Number of spent days." oninput="updateDaysSpent()"> <span
+                                            style="width: 50%;">/
                                             Day(s)</span>
                                     </div>
                                 </div>
 
+                                <div class="question-area">
+                                    <h2 class="question-title">
+                                        11. Was there a specific plan made by you for the trip ?
+                                        <span class="required-flag">*</span>
+                                    </h2>
+                                    <p class="question-description">
+                                        Specific plan for the trip activities.
+                                    </p>
+                                    <div class="answers-area options-answers-area">
+                                        <div class="radio-field">
+                                            <input required class="select-options" id="isPlannedOk" type="radio"
+                                                name="ifPlanned" value="Yes">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required class="select-options" id="isPlannedNo" type="radio"
+                                                name="ifPlanned" value="No">
+                                        </div>
+                                    </div>
+                                    <div id="ifPlanDone">
+                                        <p class="question-description"></p>
+                                        <p class="question-title">∘ How far along are you with your plan?
+                                        </p>
+                                        <div class="radio-field"> 0%
+                                            <input required class="select-options" id="planGoesPercent" type="range"
+                                                name="planGoesPercent" min="0" max="100" step="10">
+                                            100%
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
+                            <div id="questionPhase3" class="question-phase" style="display: none;">
+                                <h2 class="questions-type-title">
+                                    <strong>|</strong>
+                                    General Trip Satisfaction
+                                </h2>
+
+                                <div class="question-area">
+                                    <h2 class="question-title">
+                                        12. Who played the main role in recommending activities for you?
+                                        <span class="required-flag">*</span>
+                                    </h2>
+                                    <p class="question-description">
+                                        You can choose more than one option.
+                                    </p>
+                                    <div class="answers-area options-answers-area">
+                                        <div class="radio-field">
+                                            <input class="select-options" type="radio" name="gleMSug" value="Google">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input class="select-options" type="radio" name="aiSug" value="AI Apps">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input class="select-options" type="radio" name="tourCmpSug"
+                                                value="Tourism Company">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input class="select-options" type="radio" name="smediaSug"
+                                                value="Social Platforms">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input class="select-options" type="radio" name="personSug" value="Someone">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="question-area">
+                                    <h2 class="question-title">
+                                        13. Please Rate overall the recommendations you have got.
+                                        <span class="required-flag">*</span>
+                                    </h2>
+                                    <p class="question-description"></p>
+                                    <p class="question-description">
+                                        From 1 to 5 Very dissaisfied to Very saisfied,<br>According to How far was this
+                                        recommendations suitable for you.
+                                    </p>
+                                    <div class="answers-area options-answers-area rate-area-questions">
+                                        <div class="radio-field">
+                                            <input required class="select-options" type="radio"
+                                                name="rateRecommendation" value="1">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required class="select-options" type="radio"
+                                                name="rateRecommendation" value="2">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required class="select-options" type="radio"
+                                                name="rateRecommendation" value="3">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required class="select-options" type="radio"
+                                                name="rateRecommendation" value="4">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required class="select-options" type="radio"
+                                                name="rateRecommendation" value="5">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div id="questionPhase4" class="question-phase" style="display: none;">
+                                <h2 class="questions-type-title">
+                                    <strong>|</strong>
+                                    Transportation Satisfaction
+                                </h2>
+
+                                <div class="question-area">
+                                    <h2 class="question-title">
+                                        14. What were your main modes of transportation in Egypt?
+                                        <span class="required-flag">*</span>
+                                    </h2>
+                                    <p class="question-description"></p>
+                                    <p class="question-description">
+                                        This question is for survey purpose only.
+                                    </p>
+
+                                    
+                                </div>
+                            </div>
+
                     </div>
+                </div>
 
 
 
 
-                    <div class="form-navigation">
-                        <button type="button" class="submit-button special-submit-btn" id="prevBtn"
-                            onclick="navigateSections(-1)" style="display: none;">
-                            < Previous</button>
-                                <button type="button" class="submit-button special-submit-btn" id="nextBtn"
-                                    onclick="navigateSections(1)">Next ></button>
-                                <button type="submit" id="submitBtn" class="submit-button special-submit-btn"
-                                    style="display: none;">Submit</button>
-                    </div>
-                    </form>
+                <div class="form-navigation">
+                    <button type="button" class="submit-button special-submit-btn" id="prevBtn"
+                        onclick="navigateSections(-1)" style="display: none;">
+                        < Previous</button>
+                            <button type="button" class="submit-button special-submit-btn" id="nextBtn"
+                                onclick="navigateSections(1)">Next ></button>
+                            <button type="submit" id="submitBtn" class="submit-button special-submit-btn"
+                                style="display: none;">Submit</button>
+                </div>
+                </form>
+                <div class="powered-by-collabolator">
+                    <h3>Powered By: ERA Engines | </h3>
+                    <img src="./../../../assets/static/Google_Workspace_Logo.svg.png" alt="Google_Workspace_Logo"
+                        class="collabolator">
                 </div>
             </div>
-
-            <script>
-                let currentSectionIndex = 0; // Tracks the current section index
-                const sections = document.querySelectorAll('.question-phase');
-                const prevBtn = document.getElementById('prevBtn');
-                const nextBtn = document.getElementById('nextBtn');
-                const submitBtn = document.getElementById('submitBtn');
-                const progressBar = document.getElementById('progressBar');
-
-                // Function to validate required fields in the current section
-                function validateCurrentSection() {
-                    const currentSection = sections[currentSectionIndex];
-                    const inputs = currentSection.querySelectorAll('[required]');
-                    let isValid = true;
-
-                    inputs.forEach((input) => {
-                        if (!input.checkValidity()) {
-                            isValid = false;
-                            input.classList.add('error'); // Add error styling
-                        } else {
-                            input.classList.remove('error'); // Remove error styling
-                        }
-                    });
-
-                    return isValid;
-                }
-
-                // Function to update the progress bar
-                function updateProgressBar() {
-                    const progressPercentage = ((currentSectionIndex + 1) / sections.length) * 100;
-                    progressBar.style.width = `${progressPercentage}%`;
-                }
-
-                // Function to navigate sections
-                function navigateSections(direction) {
-                    // Validate current section before moving forward
-                    if (direction === 1 && !validateCurrentSection()) {
-                        document.getElementById("VerifyFieldsWarn").style.display = 'block';
-                        return;
-                    }
-
-                    // Hide the current section
-                    sections[currentSectionIndex].style.display = 'none';
-
-                    // Update the current section index
-                    currentSectionIndex += direction;
-
-                    // Show the new section
-                    sections[currentSectionIndex].style.display = 'block';
-
-                    // Update button visibility
-                    prevBtn.style.display = currentSectionIndex === 0 ? 'none' : 'inline-block';
-                    nextBtn.style.display = currentSectionIndex === sections.length - 1 ? 'none' : 'inline-block';
-                    submitBtn.style.display = currentSectionIndex === sections.length - 1 ? 'inline-block' : 'none';
-
-                    // Update the progress bar
-                    updateProgressBar();
-                }
-
-                // Form submission validation
-                function validateAndSubmit() {
-                    if (!validateCurrentSection()) {
-                        alert('Please complete all required fields before submitting.');
-                        return false;
-                    }
-                    alert('Form submitted successfully!');
-                    return true;
-                }
-
-                // Initialize progress bar and section visibility on page load
-                document.addEventListener('DOMContentLoaded', () => {
-                    sections.forEach((section, index) => {
-                        section.style.display = index === 0 ? 'block' : 'none';
-                    });
-                    prevBtn.style.display = 'none'; // Hide the "Previous" button initially
-                    submitBtn.style.display = 'none'; // Hide the "Submit" button initially
-                    updateProgressBar(); // Initialize the progress bar
-                });
-
-            </script>
-
-            <script>
-                function assignKernalId() {
-                    const kernalId = Math.random() * 10000;
-                    document.getElementById("kernal_ID").value = kernalId;
-                }
-
-                function validateAndSubmit() {
-                    const kernalInput = document.getElementById("kernal_ID").value;
-                    if (!kernalInput) {
-                        assignKernalId();
-                    }
-                    return true;
-                }
-                window.addEventListener('load', assignKernalId);
-            </script>
-
-
         </div>
 
-        <!-- <footer>
+
+        <script>
+            let currentSectionIndex = 0; // Tracks the current section index
+            const sections = document.querySelectorAll('.question-phase');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+            const progressBar = document.getElementById('progressBar');
+
+            // Function to validate required fields in the current section
+            function validateCurrentSection() {
+                const currentSection = sections[currentSectionIndex];
+                const inputs = currentSection.querySelectorAll('[required]');
+                let isValid = true;
+
+                inputs.forEach((input) => {
+                    if (!input.checkValidity()) {
+                        isValid = false;
+                        input.classList.add('error'); // Add error styling
+                    } else {
+                        input.classList.remove('error'); // Remove error styling
+                    }
+                });
+
+                return isValid;
+            }
+
+            // Function to update the progress bar
+            function updateProgressBar() {
+                const progressPercentage = ((currentSectionIndex + 1) / sections.length) * 100;
+                progressBar.style.width = `${progressPercentage}%`;
+            }
+
+            // Function to navigate sections
+            function navigateSections(direction) {
+                // Validate current section before moving forward
+                if (direction === 1 && !validateCurrentSection()) {
+                    document.getElementById("VerifyFieldsWarn").style.display = 'block';
+                    return;
+                }
+
+                // Hide the current section
+                sections[currentSectionIndex].style.display = 'none';
+
+                // Update the current section index
+                currentSectionIndex += direction;
+
+                // Show the new section
+                sections[currentSectionIndex].style.display = 'block';
+
+                // Update button visibility
+                prevBtn.style.display = currentSectionIndex === 0 ? 'none' : 'inline-block';
+                nextBtn.style.display = currentSectionIndex === sections.length - 1 ? 'none' : 'inline-block';
+                submitBtn.style.display = currentSectionIndex === sections.length - 1 ? 'inline-block' : 'none';
+
+                // Update the progress bar
+                updateProgressBar();
+            }
+
+            // Form submission validation
+            function validateAndSubmit() {
+                if (!validateCurrentSection()) {
+                    alert('Please complete all required fields before submitting.');
+                    return false;
+                }
+                alert('Form submitted successfully!');
+                return true;
+            }
+
+            // Initialize progress bar and section visibility on page load
+            document.addEventListener('DOMContentLoaded', () => {
+                sections.forEach((section, index) => {
+                    section.style.display = index === 0 ? 'block' : 'none';
+                });
+                prevBtn.style.display = 'none'; // Hide the "Previous" button initially
+                submitBtn.style.display = 'none'; // Hide the "Submit" button initially
+                updateProgressBar(); // Initialize the progress bar
+            });
+
+        </script>
+
+        <script>
+            function assignKernalId() {
+                const kernalId = Math.random() * 10000;
+                document.getElementById("kernal_ID").value = kernalId;
+            }
+
+            function validateAndSubmit() {
+                const kernalInput = document.getElementById("kernal_ID").value;
+                if (!kernalInput) {
+                    assignKernalId();
+                }
+                return true;
+            }
+            window.addEventListener('load', assignKernalId);
+        </script>
+
+
+    </div>
+
+    <!-- <footer>
             <div class="container footer-container">
                 <div class="footer-options" style="text-align: center;">
                     <a href="https://safi-eg.netlify.app/about">About</a>
@@ -884,6 +1013,26 @@
         document.addEventListener('DOMContentLoaded', () => {
             const radioButtons = document.querySelectorAll('input[name="ifSpecialNeed"]');
             const specialNeedInfoProgress = document.getElementById("specialNeedInfoProgress");
+            radioButtons.forEach(radioButton => {
+                radioButton.addEventListener('change', () => {
+                    if (radioButton.checked) {
+                        const selectedValue = radioButton.value;
+                        if (selectedValue === 'Yes') {
+                            specialNeedInfoProgress.classList.remove("DisplayNOTRNST");
+                            specialNeedInfoProgress.classList.add("DisplayOKTRNST");
+                        } else if (selectedValue === 'No') {
+                            specialNeedInfoProgress.classList.add("DisplayNOTRNST");
+                            specialNeedInfoProgress.classList.remove("DisplayOKTRNST");
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const radioButtons = document.querySelectorAll('input[name="ifPlanned"]');
+            const specialNeedInfoProgress = document.getElementById("ifPlanDone");
             radioButtons.forEach(radioButton => {
                 radioButton.addEventListener('change', () => {
                     if (radioButton.checked) {

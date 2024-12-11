@@ -8,6 +8,10 @@
     .logo {
         width: 20%;
     }
+    .powered-by-collabolator img {
+        width: 25%;
+        margin-left: 10px;
+    }
 }
 
 /*special*/
@@ -35,5 +39,9 @@
 
     .form-sector form {
         width: 50%;
+    }
+    .powered-by-collabolator img {
+        width: 12%;
+        margin-left: 10px;
     }
 }

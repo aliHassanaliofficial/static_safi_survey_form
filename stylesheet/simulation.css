@@ -222,6 +222,7 @@ form.timedOpacity .question-area.slide-left {
 
 .modal-content .note {
     color: lightgray;
+    margin: 10px 0px;
 }
 
 #RenderResponse {
