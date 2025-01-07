@@ -838,11 +838,144 @@
                                     <p class="question-description"></p>
                                     <p class="question-description">
                                         This question is for survey purpose only.
+                                        <br>
+                                        You can choose more than one option.
                                     </p>
 
+                                    <div class="answers-area options-answers-area options-answers-area bulks-answers">
+                                        <div class="radio-field">
+                                            <input required id="taxiTransportation" type="radio" name="taxi"
+                                                class="radio-label">
+                                            <label for="taxiTransportation" class="radio-name">Taxis</label>
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required id="ridingHailingApps" type="radio" name="riding-hailing-apps"
+                                                class="radio-label">
+                                            <label for="ridingHailingApps" class="radio-name">Ride-hailing apps (e.g., Uber, Careem, etc..)</label>
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required id="pubBuses" type="radio" name="public-buses"
+                                                class="radio-label">
+                                            <label for="pubBuses" class="radio-name">Public buses</label>
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required id="train" type="radio" name="train"
+                                                class="radio-label">
+                                            <label for="train" class="radio-name">Train</label>
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required id="companyPrivateShuttles" type="radio" name="company-private-shuttle"
+                                                class="radio-label">
+                                            <label for="companyPrivateShuttles" class="radio-name">Private tours/shuttles</label>
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required id="normalCar" type="radio" name="car"
+                                                class="radio-label">
+                                            <label for="normalCar" class="radio-name">Rented/ Private car</label>
+                                        </div>
+                                    </div>
                                     
                                 </div>
+
+                                <div class="question-area">
+                                    <h2 class="question-title">
+                                        15. Please Rate the transportation services you have used.
+                                        <span class="required-flag">*</span>
+                                    </h2>
+                                    <p class="question-description"></p>
+                                    <p class="question-description">
+                                        From 1 to 5 Very dissaisfied to Very saisfied,<br>According to How far was this
+                                        transportation suitable for you.
+                                    </p>
+                                    <div class="answers-area options-answers-area rate-area-questions">
+                                        <div class="radio-field">
+                                            <input required class="select-options" type="radio"
+                                                name="rateTransportation" value="1">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required class="select-options" type="radio"
+                                                name="rateTransportation" value="2">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required class="select-options" type="radio"
+                                                name="rateTransportation" value="3">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required class="select-options" type="radio"
+                                                name="rateTransportation" value="4">
+                                        </div>
+                                        <div class="radio-field">
+                                            <input required class="select-options" type="radio"
+                                                name="rateTransportation" value="5">
+                                        </div>
+                                    </div>
                             </div>
+
+                            <div class="question-area">
+                                <h2 class="question-title">
+                                    16. How would you rate the traffic conditions on the routes suggested by the route planners (e.g. Google maps) you have used?.
+                                    <span class="required-flag">*</span>
+                                </h2>
+                                <p class="question-description"></p>
+                                <p class="question-description">
+                                    From 1 to 5 Very dissaisfied to Very saisfied,<br>According to How far was this
+                                    applications suitable for you.
+                                </p>
+                                <div class="answers-area options-answers-area rate-area-questions">
+                                    <div class="radio-field">
+                                        <input required class="select-options" type="radio"
+                                            name="rateTrafficPlanners" value="1">
+                                    </div>
+                                    <div class="radio-field">
+                                        <input required class="select-options" type="radio"
+                                            name="rateTrafficPlanners" value="2">
+                                    </div>
+                                    <div class="radio-field">
+                                        <input required class="select-options" type="radio"
+                                            name="rateTrafficPlanners" value="3">
+                                    </div>
+                                    <div class="radio-field">
+                                        <input required class="select-options" type="radio"
+                                            name="rateTrafficPlanners" value="4">
+                                    </div>
+                                    <div class="radio-field">
+                                        <input required class="select-options" type="radio"
+                                            name="rateTrafficPlanners" value="5">
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="question-area">
+                            <h2 class="question-title">
+                                17. Were there any issues or problems with the transportation you used?
+                                <span class="required-flag">*</span>
+                            </h2>
+                            <p class="question-description"></p>
+                            <p class="question-description">
+                                Please specify any problem or any notes you have.
+                            </p>
+                            <div class="answers-area options-answers-area">
+                                <div class="radio-field">
+                                    <input required class="select-options" id="transportationOk" type="radio"
+                                        name="ifTransportationProblem" value="Yes">
+                                </div>
+                                <div class="radio-field">
+                                    <input required class="select-options" id="transportationNo" type="radio"
+                                        name="ifTransportationProblem" value="No">
+                                </div>
+                            </div>
+                            <div id="transportationNotes">
+                                <p class="question-description"></p>
+                                <p class="question-description">Please feel free to specify your problem.
+                                </p>
+                                <p class="question-description"><span
+                                        style="text-decoration: underline;">NOTE</span> This question is for
+                                    survey
+                                    purpose only,<br>Your clarification helps a lot.</p>
+                                <input type="text" name="transportationNote" id="transportationNote"
+                                    placeholder="You can put comma after each one.">
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -1066,6 +1199,27 @@
             resultField.textContent = `Days spent in Egypt: ${days}`;
         }
     </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const radioButtons = document.querySelectorAll('input[name="ifTransportationProblem"]');
+        const transportationNotes = document.getElementById("transportationNotes");
+        radioButtons.forEach(radioButton => {
+            radioButton.addEventListener('change', () => {
+                if (radioButton.checked) {
+                    const selectedValue = radioButton.value;
+                    if (selectedValue === 'Yes') {
+                        transportationNotes.classList.remove("DisplayNOTRNST");
+                        transportationNotes.classList.add("DisplayOKTRNST");
+                    } else if (selectedValue === 'No') {
+                        transportationNotes.classList.add("DisplayNOTRNST");
+                        transportationNotes.classList.remove("DisplayOKTRNST");
+                    }
+                }
+            });
+        });
+    });
+</script>
 
 
 </html>

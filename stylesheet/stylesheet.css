@@ -813,7 +813,8 @@ input[type=email] {
 }
 
 #specialNeedInfoProgress,
-#ifPlanDone {
+#ifPlanDone,
+#ifTransportationProblem {
     display: none;
     width: 100%;
 }
